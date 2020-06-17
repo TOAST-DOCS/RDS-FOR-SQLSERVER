@@ -1,4 +1,4 @@
-## Database > RDS for SQL Server > Monitoring
+## Database > RDS for MS-SQL > Monitoring
 
 Performance indicators of dabase instance, as well as events occured at a database instance, backup, parameter group or security group can be monitored. DB 인스턴스의 각종 성능 지표 및 DB 인스턴스, 백업, 파라미터 그룹과 보안 그룹에서 발생한 각종 이벤트를 모니터링할 수 있습니다.
 
@@ -18,7 +18,7 @@ Chart layout is made available as user needs, and many number of layouts can be 
 
 ## 이벤트 Event
 
-이벤트는 RDS for SQL Server 혹은 사용자에 의해 발생한 중요 사건을 의미합니다. 이벤트는 이벤트의 유형과 발생 일시, 원본 소스와 메시지로 구성됩니다. 이벤트는 웹 콘솔에서 조회 가능하며, 구독을 통해 이메일, SMS, 웹훅을 통해 이벤트 발생 알림을 받을 수 있습니다. 이벤트의 유형과 발생 가능한 이벤트는 아래와 같습니다. An event refers to an important incident incurred by RDS for SQL Server or user. An event is comprised of a category, date of occurrence, original source and message. It can be queried on a web console and notified via email, SMS, or webshook on subscription. Each event category may include event occurrences, like follows:  
+이벤트는 RDS for MS-SQL혹은 사용자에 의해 발생한 중요 사건을 의미합니다. 이벤트는 이벤트의 유형과 발생 일시, 원본 소스와 메시지로 구성됩니다. 이벤트는 웹 콘솔에서 조회 가능하며, 구독을 통해 이메일, SMS, 웹훅을 통해 이벤트 발생 알림을 받을 수 있습니다. 이벤트의 유형과 발생 가능한 이벤트는 아래와 같습니다. An event refers to an important incident incurred by RDS for MS-SQLor user. An event is comprised of a category, date of occurrence, original source and message. It can be queried on a web console and notified via email, SMS, or webshook on subscription. Each event category may include event occurrences, like follows:  
 
 | Event Category 이벤트 유형 | Event Code이벤트 코드 | Event Message 이벤트 메시지 |
 | - | - | - |

@@ -1,4 +1,4 @@
-## Database > RDS for SQL Server > Database Access 
+## Database > RDS for MS-SQL > Database Access 
 
 Access is not directly allowed to an operating system of a database instance but is available only via such port entered when creating a database instance. 
 
