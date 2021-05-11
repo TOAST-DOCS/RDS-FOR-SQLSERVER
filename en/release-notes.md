@@ -2,9 +2,9 @@
 
 ### 2021. 05. 11.
 
-#### 기능 개선
+### Feature Updates
 
-* 백업을 전체 선택하는 체크 박스를 추가
+* Added the checkbox that selects all backups
 
 ### 2021. 04. 13.
 
