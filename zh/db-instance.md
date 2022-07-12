@@ -1,17 +1,17 @@
-## Database > RDS for SQL Server > Database Instance
+## Database > RDS for MS-SQL > DB Instance
 
-## Database Instance
+## DB Instance
 
-Database instance encompasses virtual equipment and installed Microsoft SQL Server, serving as the unit of Microsoft SQL Server provided by RDS for SQL Server.
-Direct access to a database instance is not allowed, but access is enabled only through the port entered when creating the database instance.
-Database instances can be identified by user-specified name or automatically assigned 32-bit ID.
-A database instance must be named, considering the following constraints:
+DB instance encompasses virtual equipment and installed Microsoft SQL Server, serving as the unit of Microsoft SQL Server provided by RDS for MS-SQL.
+Direct access to a DB instance is not allowed, but access is enabled only through the port entered when creating the DB instance.
+DB instances can be identified by user-specified name or automatically assigned 32-bit ID.
+A DB instance name has the following constraints:
 
 * Must be unique for each region.
-* Must be comprised of alphabets, numbers, -, _ ,and .only, between 4 and 100 characters.
+* Must consist of alphabets, numbers, -, _, and . only, between 4 and 100 characters.
 * Must start with a letter.
 
-To create a database instance, user account and password setting is required, considering the following constraints:
+To create a DB instance, user account and password setting is required, considering the following constraints:
 
 * User account must be between 4 and 16 characters, comprised of alphabets and numbers only, starting with a letter.
 * Password must be between 8 and 128, comprised of alphabets, numbers, !, $, #, and % only.
@@ -20,10 +20,10 @@ To create a database instance, user account and password setting is required, co
 
 ### Availability Zone
 
-RDS for SQL Server has many availability zones under one system so as to prepare against failure in physical hardware. A failure that occurs within an availability zone does not affect other availability zones, increasing availability of the entire service. Database instances that are dispersed and created in different availability zones can communicate via network, with no charges.
+RDS for MS-SQL has many availability zones under one system so as to prepare against failure in physical hardware. A failure that occurs within an availability zone does not affect other availability zones, increasing availability of the entire service. DB instances that are dispersed and created in different availability zones can communicate via network, with no charges.
 
 > [Caution]
-> You cannot change the availability zone of a database instance that has already been created.
+> You cannot change the availability zone of a DB instance that has already been created.
 
 ### Version of Microsoft SQL Server
 
@@ -31,14 +31,15 @@ The following versions are supported.
 
 * SQL Server 2016 Standard (13.0.5850.14)
 * SQL Server 2017 Standard (14.0.3294.2)
+* SQL Server 2019 Standard (15.0.4223.1)
 
 > [Caution]
 > You cannot create a different version when restoring using a backup file since the backup files for each version are incompatible.
 
-### Database Instance Type
+### DB Instance Type
 
-Each type of database instance has different CPU core count and memory volume.
-To create a database instance, an appropriate type must be selected depending on the database workload.
+Each type of DB instance has different CPU core count and memory volume.
+To create a DB instance, an appropriate type must be selected depending on the database workload.
 
 | Type    | Description |
 | ------- | -------------------------------------------------|
@@ -77,8 +78,8 @@ DB instance status consists of the following values, and it may change depending
 
 ### Storage Type
 
-Database instances support two storage types: HDD or SSD.
-Since each storage type provides different performance and pricing, an appropriate storage type must be selected depending on the database workload.  
+DB instances support two storage types: HDD or SSD.
+Since each storage type provides different performance and pricing, an appropriate storage type must be selected depending on the database workload.
 A storage type can be created from 20GB up to 2,000 GB.
 You can use the web console to easily change the size of a storage that has already been created.
 
@@ -123,12 +124,12 @@ The high availability auto recovery feature schedules a high availability reconf
 * DB instances with completed failover may fail to operate or operate properly due to issues such as data loss on the account of failures.
 * As the high availability feature is based on domains, if a Compute & Network service instance for a user is in a network environment where it cannot reach any DNS server, the relevant instance cannot access the DB instance through a domain and normal access will be blocked when a failover occurs.
 * When a new database is created in a DB instance, it may take at least 5 minutes up to dozens of minutes for the database to be mirrored.
-    * If a failover occurs before the mirroring is complete, the failover of the database won't be properly done.
+  * If a failover occurs before the mirroring is complete, the failover of the database won't be properly done.
 * All databases of high availability DB instances operate in the same server. When a failure occurs on a specific database, all databases will fail over.
 * Failover is not performed if there is no mirrored database.
 * User, login, and permission of the primary server will be replicated to the secondary server.
-    * Replication takes at least 10 seconds up to dozens of minutes.
-    * When a failure occurs before the copying process is complete, the corrections will be lost.
+  * Replication takes at least 10 seconds up to dozens of minutes.
+  * When a failure occurs before the copying process is complete, the corrections will be lost.
 * SQL Server Agent jobs cannot be replicated. When failover is complete, it needs to be created again in the promoted DB instance.
 * The failover time is impacted by the recovery process; the larger the transaction, the longer the time.
 * The auto failover feature will be temporarily disabled while changing a DB instance.

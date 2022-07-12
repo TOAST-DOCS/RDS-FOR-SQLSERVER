@@ -487,15 +487,16 @@ Click the **+ Create Group** button at the top of the notification group list an
 
 ![notification group list 001](https://static.toastoven.net/prod_rds_mssql/notification_group_list_001.png)
 ![create notification group 001](https://static.toastoven.net/prod_rds_mssql/notification_group_create_001.png)
+
 * ❶ Choose whether to enable or disable the notification group.
     * Notifications will not be received when disabled.
 * ❷ Select the DB instance to monitor.
-    * ![notification group DB instance 001](https://static.toastoven.net/prod_rds_mssql/notification_group_db_instance_001.png)
+    ![notification group DB instance 001](https://static.toastoven.net/prod_rds_mssql/notification_group_db_instance_001.png)
     * Supports Autocomplete input.
     * Only DB instance that is available, failed connection, and have insufficient storage can be selected.
     * Only DB instance that is available, failed connection, and have insufficient storage can be removed from the monitored DB instance.
 * ❸ Select the user groups to be notified when the event occurs.
-    * ![notification group user group 001](https://static.toastoven.net/prod_rds_mssql/notification_group_user_group_001.png)
+    ![notification group user group 001](https://static.toastoven.net/prod_rds_mssql/notification_group_user_group_001.png)
     * Supports Autocomplete input.
 
 Click the **OK** button at the bottom of the pop-up to create the notification group.
@@ -516,7 +517,7 @@ In the notification group list, click the **Monitoring Settings** button at the 
 ![notification group monitoring setting 001](https://static.toastoven.net/prod_rds_mssql/notification_group_metric_001.png)
 
 * ❶ New monitoring settings can be added by clicking the **+ Monitoring Setting** button.
-    * ![add notification group monitoring setting 001](https://static.toastoven.net/prod_rds_mssql/notification_group_metric_add_001.png)
+  ![add notification group monitoring setting 001](https://static.toastoven.net/prod_rds_mssql/notification_group_metric_add_001.png)
     * The threshold can be set to a value between over 0 and below 100.
     * The duration can be set to a value between over 0 and below 32,767.
 * ❷ Click the button to modify the default monitoring settings.
@@ -532,8 +533,9 @@ Click the **+ Create User Group** at the top of the user group list and a pop-up
 
 ![user group list 001](https://static.toastoven.net/prod_rds_mssql/user_group_list_001.png)
 ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_create_001.png)
+
 * ❶ Add and delete notification target.
-    * ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
+  ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
     * Click the **Add** button on the right of the user to add as a notification target.
     * Click the **x** button on the right of the user’s name to remove it from the notification target.
     * Only the project members are displayed on the user list. Only the users who completed verification have their name and SMS displayed in addition.
@@ -569,6 +571,7 @@ A list of up to 50 scheduled tasks appears on a screen.
 ### Edit a Scheduled Task
 In the list of scheduled tasks, click the **Edit** button on the right of the scheduled task you want to modify.
 ![Scheduled Task List 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_001_en.png)
+
 * ❶ You can set the schedule time type.
     * Repeated Daily
         * The system tries starting a scheduled task every day at the set time.
