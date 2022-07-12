@@ -1,8 +1,8 @@
-## Database > RDS for SQL Server > Console User Guide
+## Database > RDS for MS-SQL > Console User Guide
 
-## Database Instances
+## DB Instances
 
-On the Database Instances tab, you can create, modify, or delete database (DB) instances, or query status information of created DB instances.
+On the DB Instances tab, you can create, modify, or delete database (DB) instances, or query status information of created DB instances.
 
 ### Create a DB Instance
 
@@ -13,7 +13,7 @@ Enter specifications, information, network, floating IP, DB security group, and 
 
 * ❶ From Compute & Network, select a created VPC subnet.
 * ❷ When a DB security group is not available, click **Create DB Security Group** to immediately create and apply a security group.
-* For more details, see [Database Instance](./db-instance) and [Database Access](./database-connection).
+* For more details, see [DB Instance](./db-instance) and [Database Access](./database-connection).
 
 With a DB instance successfully created, you're automatically moved to the list of DB instances. It takes a few minutes, or up to a few dozens of minutes, to create a DB instance.
 
@@ -32,8 +32,10 @@ One page shows up to 50 DB instances on the list.
 * ❸ Frequently used tasks can be performed.
 * ❹ Not frequently used additional tasks can be performed.
 * ❺ Pages can be navigated when the current list is refreshed or there are 50 DB instances or more.
-* ❻ Current CPU usage and number of active sessions. The value is updated every minute.
-* ❼ The DB instance status. Different status values and colors appear depending on the status. A spinner appears if the DB instance is in operation.
+* ❻ The button is exposed when the instance is a target for hypervisor maintenance. Refer to Appendix 1 for how to perform migration.
+* ❼ The button is exposed when the parameter group has been changed but not applied yet. You can apply the parameters by clicking the button.
+* ❽ Current CPU usage and number of active sessions. The value is updated every minute.
+* ❾ The DB instance status. Different status values and colors appear depending on the status. A spinner appears if the DB instance is in operation.
 
 ### Restart a DB Instance
 
@@ -85,9 +87,9 @@ Once request for modifying a DB instance is successfully made, you're moved to t
 * ❿ The VPC cannot be changed.
 * ⓫ If you modify the task schedule time, the schedule time of the already created scheduled task is also changed.
 * ⓬ If you click **Modify DB Instance**, a confirmation window for DB instance modification appears.
-![Modify DB Instances > Confirm Model](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_modal_001_kr.png)
-    * If you click **Run Immediately**, it is changed immediately.
-    * If you click **Schedule Task**, a task is scheduled at the task schedule time of the DB instance.
+  ![Modify DB Instances > Confirm Model](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_modal_001_kr.png)
+  * If you click **Run Immediately**, it is changed immediately.
+  * If you click **Schedule Task**, a task is scheduled at the task schedule time of the DB instance.
 
 ### DB Instance Details
 
@@ -108,8 +110,8 @@ You may check basic information of a selected DB instance.
 
 * ❹ Clicking the **Copy** button will copy the domain information into the clipboard.
 * ❺ Shows the database replication status of a high availability DB instance.
-    * It takes some time for the database to be exposed to the web console after its creation.
-    * Failover is not performed for databases of which status is not 'replicated'.
+  * It takes some time for the database to be exposed to the web console after its creation.
+  * Failover is not performed for databases of which status is not 'replicated'.
 * ❻ Shows the security group of the applied DB. Hover the cursor over a DB security group name to see its security group rules.
 
 ![DB Instance Details > Basic Information 001 Security Rules](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_detail_inst_001_dsg_kr.png)
@@ -160,12 +162,12 @@ A list of up to 50 scheduled tasks appears on a screen.
 ![DB Instance Details > Scheduled Task 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_reserved_process_001.png)
 
 * ❶ If you click the **Condition** button, you can filter the results by scheduled task status.
-    * 'All' searches for all status values ​​other than Deleted.
+  * 'All' searches for all status values ​​other than Deleted.
 * ❷ Click **Edit** to change the time set for the scheduled task.
 * ❸ Click **Run Immediately** to change the time for the scheduled task to the current time.
 * ❹ Click **Delete** to delete a scheduled task.
-    * You can delete scheduled tasks with status 'Scheduled', 'Registered', 'Canceled', 'Error', or 'Verification Failed'.
-    * If you delete a scheduled task with 'Scheduled' or 'Registered' status, the task will not be executed.
+  * You can delete scheduled tasks with status 'Scheduled', 'Registered', 'Canceled', 'Error', or 'Verification Failed'.
+  * If you delete a scheduled task with 'Scheduled' or 'Registered' status, the task will not be executed.
 
 ### Back Up to Object Storage
 
@@ -182,8 +184,8 @@ After selecting a specific DB instance from the list, click the **Back Up to Obj
 * ❸ Enter the API password of the object storage where the backup will be stored.
 * ❹ Enter the container name of the object storage where the backup will be stored.
 * ❺ Enter the file path of the backup file to be stored in the container.
-    * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
-    * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
+  * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
+  * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
 * ❻ Enter the name of the database to be backed up.
 * ❼ Select whether to use differential backup.
 
@@ -206,8 +208,8 @@ After selecting a specific DB instance from the list, click the **Recover From B
 * ❸ Enter the API password of the object storage where the backup will be stored.
 * ❹ Enter the container name of the object storage where the backup will be stored.
 * ❺ Enter the file path of the backup file to be stored in the container.
-    * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
-    * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
+  * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
+  * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
 * ❻ Enter the name of the database to be backed up.
 * ❼ Select whether to recover.
 
@@ -253,14 +255,14 @@ Select the backup to be sent to object storage from the list and click the **Exp
 * ❸ Enter the API password of the object storage where the backup will be stored.
 * ❹ Enter the container name of the object storage where the backup will be stored.
 * ❺ Enter the file path of the backup file to be stored in the container.
-    * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
-    * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
+  * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
+  * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
 * ❻ Enter the name of the database to be backed up.
 * ❼ Select whether to use differential backup.
 
 ## Restoration
 
-RDS for SQL Server supports Restoration with Backup and Point-in-time Restoration.
+RDS for MS-SQL supports Restoration with Backup and Point-in-time Restoration.
 For more details, see [Backup and Restoration](./backup-restore).
 
 ### Restore using Backup
@@ -326,7 +328,7 @@ Enter information of an event to subscribe, click **Create** at the bottom and y
 
 * ❶ Each event type can be subdivided into event codes and event sources.
 * ❷ Select the user groups to be notified when the event occurs.
-    * Supports Autocomplete input.
+  * Supports Autocomplete input.
 
 ![Pop-up for Event Subscription 002](https://static.toastoven.net/prod_rds_mssql/event_subscription_002.png)
 
@@ -335,18 +337,18 @@ Enter information of an event to subscribe, click **Create** at the bottom and y
 ![Pop-up for Event Subscription 003](https://static.toastoven.net/prod_rds_mssql/event_subscription_003.png)
 
 * ❶ Supports autocomplete.
-    * Available event codes are filtered for a keyword.
-    * Move up and down on your keyboard to select an event code, press Enter, and it is automatically completed.
-    * You may delete an event code, which has already been added, by pressing the backspace or clicking **x**.
+  * Available event codes are filtered for a keyword.
+  * Move up and down on your keyboard to select an event code, press Enter, and it is automatically completed.
+  * You may delete an event code, which has already been added, by pressing the backspace or clicking **x**.
 * ❷ You may select an event code with a click of the mouse.
 
 ![Pop-up for Event Subscription 004](https://static.toastoven.net/prod_rds_mssql/event_subscription_004.png)
 
 * Shows event sources for each event type.
 * ❶ Supports autocomplete.
-    * Available event sources are filtered for a keyword.
-    * Move up and down on your keyboard to select an event source, press Enter, and it is automatically completed.
-    * You may delete an event source, which has already been added, by pressing the backspace or clicking **x**.
+  * Available event sources are filtered for a keyword.
+  * Move up and down on your keyboard to select an event source, press Enter, and it is automatically completed.
+  * You may delete an event source, which has already been added, by pressing the backspace or clicking **x**.
 * ❷ You may select an event source with a click of the mouse.
 
 ## Parameter Groups
@@ -437,7 +439,7 @@ Select a DB security group policy from the details view panel to change or delet
 ## Server Dashboard
 
 On the Server Dashboard tab, check out performance metrics of a DB instance on a chart.
-RDS for SQL Server, by default, provides two layouts, such as basic system metrics and basic SQL server metrics.
+RDS for MS-SQL, by default, provides two layouts, such as basic system metrics and basic SQL server metrics.
 Default layout cannot be deleted or changed.
 
 ![Server Dashboard 001](https://static.toastoven.net/prod_rds_mssql/server_dashboard_list_001.png)
@@ -485,16 +487,17 @@ Click the **+ Create Group** button at the top of the notification group list an
 
 ![notification group list 001](https://static.toastoven.net/prod_rds_mssql/notification_group_list_001.png)
 ![create notification group 001](https://static.toastoven.net/prod_rds_mssql/notification_group_create_001.png)
+
 * ❶ Choose whether to enable or disable the notification group.
-    * Notifications will not be received when disabled.
+  * Notifications will not be received when disabled.
 * ❷ Select the DB instance to monitor.
-    * ![notification group DB instance 001](https://static.toastoven.net/prod_rds_mssql/notification_group_db_instance_001.png)
-    * Supports Autocomplete input.
-    * Only DB instance that is available, failed connection, and have insufficient storage can be selected.
-    * Only DB instance that is available, failed connection, and have insufficient storage can be removed from the monitored DB instance.
+  ![notification group DB instance 001](https://static.toastoven.net/prod_rds_mssql/notification_group_db_instance_001.png)
+  * Supports Autocomplete input.
+  * Only DB instance that is available, failed connection, and have insufficient storage can be selected.
+  * Only DB instance that is available, failed connection, and have insufficient storage can be removed from the monitored DB instance.
 * ❸ Select the user groups to be notified when the event occurs.
-    * ![notification group user group 001](https://static.toastoven.net/prod_rds_mssql/notification_group_user_group_001.png)
-    * Supports Autocomplete input.
+  ![notification group user group 001](https://static.toastoven.net/prod_rds_mssql/notification_group_user_group_001.png)
+  * Supports Autocomplete input.
 
 Click the **OK** button at the bottom of the pop-up to create the notification group.
 
@@ -514,9 +517,9 @@ In the notification group list, click the **Monitoring Settings** button at the 
 ![notification group monitoring setting 001](https://static.toastoven.net/prod_rds_mssql/notification_group_metric_001.png)
 
 * ❶ New monitoring settings can be added by clicking the **+ Monitoring Setting** button.
-    * ![add notification group monitoring setting 001](https://static.toastoven.net/prod_rds_mssql/notification_group_metric_add_001.png)
-    * The threshold can be set to a value between over 0 and below 100.
-    * The duration can be set to a value between over 0 and below 32,767.
+  ![add notification group monitoring setting 001](https://static.toastoven.net/prod_rds_mssql/notification_group_metric_add_001.png)
+  * The threshold can be set to a value between over 0 and below 100.
+  * The duration can be set to a value between over 0 and below 32,767.
 * ❷ Click the button to modify the default monitoring settings.
 * ❸ Click the button to delete the monitoring settings.
 
@@ -530,11 +533,12 @@ Click the **+ Create User Group** at the top of the user group list and a pop-up
 
 ![user group list 001](https://static.toastoven.net/prod_rds_mssql/user_group_list_001.png)
 ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_create_001.png)
+
 * ❶ Add and delete notification target.
-    * ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
-    * Click the **Add** button on the right of the user to add as a notification target.
-    * Click the **x** button on the right of the user’s name to remove it from the notification target.
-    * Only the project members are displayed on the user list. Only the users who completed verification have their name and SMS displayed in addition.
+  ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
+  * Click the **Add** button on the right of the user to add as a notification target.
+  * Click the **x** button on the right of the user’s name to remove it from the notification target.
+  * Only the project members are displayed on the user list. Only the users who completed verification have their name and SMS displayed in addition.
 
 Click the **OK** button at the bottom of the pop-up to create a user group.
 
@@ -557,29 +561,30 @@ A list of up to 50 scheduled tasks appears on a screen.
 ![DB Instance Details > Scheduled Task 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_list_001_kr.png)
 
 * ❶ If you click the **Condition** button, you can filter the results by scheduled task status.
-    * 'All' searches for all status values ​​other than Deleted.
+  * 'All' searches for all status values ​​other than Deleted.
 * ❷ Click **Edit** to change the time set for the scheduled task.
 * ❸ Click **Run Immediately** to change the time for the scheduled task to the current time.
 * ❹ Click **Delete** to delete a scheduled task.
-    * You can delete scheduled tasks with status 'Scheduled', 'Registered', 'Canceled', 'Error', and 'Verification Failed'.
-    * If you delete a scheduled task with 'Scheduled' or 'Registered' status, the task will not be executed.
+  * You can delete scheduled tasks with status 'Scheduled', 'Registered', 'Canceled', 'Error', and 'Verification Failed'.
+  * If you delete a scheduled task with 'Scheduled' or 'Registered' status, the task will not be executed.
 
 ### Edit a Scheduled Task
 In the list of scheduled tasks, click the **Edit** button on the right of the scheduled task you want to modify.
 ![Scheduled Task List 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_001_en.png)
+
 * ❶ You can set the schedule time type.
-    * Repeated Daily
-        * The system tries starting a scheduled task every day at the set time.
-        * If the task fails to start because another task is in progress, the task is tried again the next day.
-    * After Specific Time
-        * The system attempts to start the task after a specific time.
-        * If there is another task in progress, the task starts after the running task is completed.
+  * Repeated Daily
+    * The system tries starting a scheduled task every day at the set time.
+    * If the task fails to start because another task is in progress, the task is tried again the next day.
+  * After Specific Time
+    * The system attempts to start the task after a specific time.
+    * If there is another task in progress, the task starts after the running task is completed.
 * ❷ Set the reservation time.
-    * Repeated Daily
-        ![modify scheduled task daily repeat 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_002_kr.png)
-        * The time interval must be set to at least 30 minutes.
-    * After Specific Time
-        ![modify scheduled task daily repeat 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_003_kr.png)
+  * Repeated Daily
+    ![modify scheduled task daily repeat 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_002_kr.png)
+    * The time interval must be set to at least 30 minutes.
+  * After Specific Time
+    ![modify scheduled task daily repeat 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_003_kr.png)
 
 ### Run a Scheduled Task Immediately
 In the list of scheduled tasks, click **Run Immediately** on the right of the scheduled task you want to run.
