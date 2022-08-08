@@ -1,6 +1,16 @@
 ## Database > RDS for MS-SQL > Release Notes
 
-### July 14, 2022
+### August 9, 2022
+
+#### Feature Improvements
+
+* Made modifications so that, when DB connection is unavailable due to changing parameters incorrectly, the parameters can be changed.
+
+#### Bug Fixes
+
+* Fixed an issue where failover fails intermitently
+
+### July 12, 2022
 
 #### Feature Improvements
 
