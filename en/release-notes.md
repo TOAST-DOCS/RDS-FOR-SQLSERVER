@@ -1,5 +1,18 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### July 14, 2022
+
+#### Feature Improvements
+
+* Made improvements so that, when backup fails due to insufficient system memory of MS-SQL, the cause is recorded in event log 
+* Made improvements so that there is little delay in the log view screen on the console
+
+#### Bug Fixes
+
+* Made modifications so that, when replicating the selected parameter group, the selection is cleared
+* Fixed an issue where log backup fails intermitently
+* Made modifications so that a full backup is not performed when log backup fails even before it starts
+
 ### June 14, 2022
 
 #### Feature Improvements
