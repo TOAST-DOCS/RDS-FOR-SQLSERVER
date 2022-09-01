@@ -133,11 +133,14 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 선택한 DB 인스턴스에서 발생한 Microsoft SQL Server 의 에러로그를 확인할 수 있습니다.
 에러로그 내용을 최신 순으로 정렬하며, 한화면에 최대 10줄의 에러로그를 확인할 수 있습니다.
 
-![DB 인스턴스 상세 > 로그 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_log_001.png)
+![DB 인스턴스 상세 > 로그 001](https://static.toastoven.net/prod_rds_mssql/20220914/db_instance_detail_log_001.png)
 
 * ❶ 조회 기간을 선택합니다. 별도로 지정하지 않으면 최근 일주일간의 에러로그를 조회합니다.
-* ❷ 조회 기간을 기본값으로 초기화합니다.
-* ❸ 현재 목록을 갱신하거나, 10줄 이상의 에러로그가 있을 경우, 페이지 이동을 할 수 있습니다.
+* ❷ **로그 보기** 버튼을 클릭하면 해당 로그 파일의 최근 로그를 확인할 수 있습니다.
+
+![DB 인스턴스 상세 > 로그 002](https://static.toastoven.net/prod_rds_mssql/20220914/db_instance_detail_log_002.png)
+
+* ❶ **모든 로그 보기** 버튼을 클릭하면 조회 기간 내의 모든 로그를 무한 스크롤 방식으로 확인할 수 있습니다.
 
 #### 백업
 
