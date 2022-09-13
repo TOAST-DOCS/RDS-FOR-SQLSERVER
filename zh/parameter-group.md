@@ -67,8 +67,7 @@ If applying the parameters to the DB instance fails, the changed parameters can 
 
 There are two types of methods for applying parameters: `Dynamic` and `Static`.
 A `Dynamic` parameter is applied immediately without restart when the parameter is changed.
-A `Static` parameter is applied after a restart, and if any of the `Static` parameters are changed, the DB instance restart task is scheduled.
-If the parameter is applied before the scheduled DB instance restart task, the scheduled restart is deleted.
+A `Static` parameter is applied after a restart, and if any of the `Static` parameters are changed, `Waiting for restart` appears in the DB instance details page.
 
 If the connection to the database is unavailable when parameters are changed, the database can be restarted.
 Changing parameters for a DB instance in the connection unavailable status can fail. If the task is not completed properly, it will be reported to the administrator automatically, and NHN Cloud will contact you separately.
