@@ -1,5 +1,16 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### September 14, 2022
+
+#### Feature Improvements
+
+* Made modifications so that, when a parameter that requires a restart is changed, the DB instance restart is not scheduled
+* Made improvements so that error logs can be found through infinite scrolling
+
+#### Bug Fixes
+
+* Fixed an issue where database replication occurs twice when changing a single DB instance to a high availability DB instance right after creating database
+
 ### August 9, 2022
 
 #### Feature Improvements
