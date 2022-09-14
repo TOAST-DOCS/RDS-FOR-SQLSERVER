@@ -1,5 +1,39 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### September 14, 2022
+
+#### Feature Improvements
+
+* Made modifications so that, when a parameter that requires a restart is changed, the DB instance restart is not scheduled
+* Made improvements so that error logs can be found through infinite scrolling
+
+#### Bug Fixes
+
+* Fixed an issue where database replication occurs twice when changing a single DB instance to a high availability DB instance right after creating database
+
+### August 9, 2022
+
+#### Feature Improvements
+
+* Made modifications so that, when DB connection is unavailable due to changing parameters incorrectly, the parameters can be changed.
+
+#### Bug Fixes
+
+* Fixed an issue where failover fails intermitently
+
+### July 12, 2022
+
+#### Feature Improvements
+
+* Made improvements so that, when backup fails due to insufficient system memory of MS-SQL, the cause is recorded in event log
+* Made improvements so that there is little delay in the log view screen on the console
+
+#### Bug Fixes
+
+* Made modifications so that, when replicating the selected parameter group, the selection is cleared
+* Fixed an issue where log backup fails intermitently
+* Made modifications so that a full backup is not performed when log backup fails even before it starts
+
 ### June 14, 2022
 
 #### Feature Improvements
