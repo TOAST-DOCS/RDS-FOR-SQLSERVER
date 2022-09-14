@@ -133,11 +133,14 @@ Check out relevant events of a selected DB instance. For more details, see [Even
 Find out error logs of Microsoft SQL Server occurred at a selected DB instance.
 Error logs are aligned in the latest time order, with 10 lines of logs on each page.
 
-![DB Instance Details > Logs 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_log_001.png)
+![DB Instance Details > Logs 001](https://static.toastoven.net/prod_rds_mssql/20220914/db_instance_detail_log_001.png)
 
 * ❶ Select a period to query. Without a period specified, the recent week's error logs shows up.
-* ❷ Initialize query period as default.
-* ❸ Pagination is available when the current list is updated or if there are more than 10 lines of error logs.
+* ❷ Click **View Log** to check the most recent logs for the log file.
+
+![DB Instance Details > Logs 002](https://static.toastoven.net/prod_rds_mssql/20220914/db_instance_detail_log_002.png)
+
+* ❶ Click **View All Logs** to check all logs for the search period through infinite scrolling.
 
 #### Backups
 
