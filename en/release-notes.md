@@ -3,7 +3,7 @@
 ### October 11, 2022
 
 #### Bug Fixes
-* Limited the maximum available period for querying error logs to 3 month
+* Limited the maximum available period for querying error logs to 3 months
 
 ### September 14, 2022
 
