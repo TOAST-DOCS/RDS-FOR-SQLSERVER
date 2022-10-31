@@ -99,8 +99,7 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 #### 기본 정보
 
 선택한 DB 인스턴스의 기본정보를 확인할 수 있습니다.
-
-![DB 인스턴스 상세 > 기본 정보 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_inst_001_kr.png)
+![DB 인스턴스 상세 > 기본 정보 001](https://static.toastoven.net/prod_rds_mssql/20221115/db_instance_detail_inst_001_kr.png)
 
 * ❶ **변경** 버튼 클릭 시, DB 인스턴스의 이름을 변경할 수 있습니다.
 * ❷ **복사** 버튼 클릭 시, DB 인스턴스의 아이디를 클립보드로 복사합니다.
