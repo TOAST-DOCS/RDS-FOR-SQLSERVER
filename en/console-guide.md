@@ -573,7 +573,7 @@ A list of up to 50 scheduled tasks appears on a screen.
 
 ### Edit a Scheduled Task
 In the list of scheduled tasks, click the **Edit** button on the right of the scheduled task you want to modify.
-![Scheduled Task List 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_001_en.png)
+![Scheduled Task List 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_001_kr.png)
 
 * ❶ You can set the schedule time type.
     * Repeated Daily
