@@ -9,7 +9,7 @@ On the DB Instances tab, you can create, modify, or delete database (DB) instanc
 To create a DB instance, click **Create DB Instance** on top left of the list to go to page for DB instance creation.
 Enter specifications, information, network, floating IP, DB security group, and backup settings for the instance, click **Create DB Instance** and send a request for creation.
 
-![Create DB Instance 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_create_001_kr.png)
+![Create DB Instance 001](https://static.toastoven.net/prod_rds_mssql/20221115/db_instance_create_001_kr.png)
 
 * ❶ From Compute & Network, select a created VPC subnet.
 * ❷ When a DB security group is not available, click **Create DB Security Group** to immediately create and apply a security group.
@@ -22,7 +22,7 @@ With a DB instance successfully created, you're automatically moved to the list 
 Brief information of DB instances can be listed.
 One page shows up to 50 DB instances on the list.
 
-![List of DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_list_001.png)
+![List of DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20221115/db_instance_list_001.png)
 
 * ❶ Search is available by the name or UUID of a DB instance.
 * ❷ With a click on the condition, search results can be filtered by availability zone or DB instance status.
@@ -73,20 +73,21 @@ Available DB instances can be easily modified in the setting via web console.
 After setting is changed, click **Modify** at the bottom of the page to modify a DB instance.
 Once request for modifying a DB instance is successfully made, you're moved to the list of DB instances. It takes a few minutes, or up to a few dozens of minutes, to modify a DB instance.
 
-![Modify DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_modify_001_kr.png)
+![Modify DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20221115/db_instance_modify_001_kr.png)
 
 * ❶ The availability zone cannot be changed.
 * ❷ When the DB instance type is changed, database is restarted.
 * ❸ The storage type cannot be changed.
 * ❹ The storage capacity cannot be reduced once it is increased.
-* ❺ To use the high availability feature, the backup retention period must be set to 1 day or longer.
-* ❻ If the high availability auto recovery is enabled, a scheduled task for high availability recovery that runs one hour after the completion of automatic failover is created.
-* ❼ The user ID cannot be changed.
-* ❽ Without entering the password, settings cannot be changed.
-* ❾ When the port is changed, database is restarted.
-* ❿ The VPC cannot be changed.
-* ⓫ If you modify the task schedule time, the schedule time of the already created scheduled task is also changed.
-* ⓬ If you click **Modify DB Instance**, a confirmation window for DB instance modification appears.
+* ❺ When the temp DB location is changed, the database is restarted. 
+* ❻ To use the high availability feature, the backup retention period must be set to 1 day or longer.
+* ❼ If the high availability auto recovery is enabled, a scheduled task for high availability recovery that runs one hour after the completion of automatic failover is created.
+* ❽ The user ID cannot be changed.
+* ❾ Without entering the password, settings cannot be changed.
+* ❿ When the port is changed, database is restarted.
+* ⓫ The VPC cannot be changed.
+* ⓬ If you modify the task schedule time, the schedule time of the already created scheduled task is also changed.
+* ⓭ If you click **Modify DB Instance**, a confirmation window for DB instance modification appears.
 ![Modify DB Instances > Confirm Model](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_modal_001_kr.png)
     * If you click **Run Immediately**, it is changed immediately.
     * If you click **Schedule Task**, a task is scheduled at the task schedule time of the DB instance.
@@ -149,13 +150,18 @@ One page shows up to 50 backups on the list.
 
 ![DB Instance Details > Backups 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_backup_001.png)
 
-* ❶ Shows backup execution time. If time is not specified, the time specified by the system is displayed.
-* ❷ Shows creation time of the most recently executed backup.
-* ❸ Search is available by the backup name.
-* ❹ Restore DB instances by using selected backups.
-* ❺ Delete selected backups: only manual backups can be deleted.
-* ❻ Create manual backup files.
-* ❼ Pagination is available when the current list is updated or if there are more than 50 backup files.
+* ❶ You can activate or deactivate backup. If backup is deactivated, auto backup is not proceeded during the backup execution time.
+* ❷ You can activate or deactivate log backup. While log backup is deactivated, the point-in-time restoration time does not increase.
+* ❸ Show the creation time for the latest executed backup.
+* ❹ Show the backup execution time. If time is not specified, the time specified by the system is displayed.
+* ❺ Show whether to activate backup.
+* ❻ Show whether to activate log backup.
+* ❼ Show whether to proceed with log backup.
+* ❽ You can search by backup name.
+* ❾ Restore a DB instance by using the selected backup.
+* ❿ Delete the selected backup. Only manual backup can be deleted.
+* ⓫ Create a manual backup file.
+* ⓬ When updating the current list or 50 or more backup files exist, you can move between pages.
 
 #### Scheduled Task
 
@@ -283,7 +289,7 @@ DB instance type, storage type, storage size, port, parameter group, and DB secu
 > If the parameter group at the time of backup does not exist, default group is selected.
 > Only DB security group that exists during backup is automatically selected.
 
-![Restoration 003](https://static.toastoven.net/prod_rds_mssql/20220614/restore_003.png)
+![Restoration 003](https://static.toastoven.net/prod_rds_mssql/20221115/restore_003.png)
 
 It takes a few minutes, or up to a few dozens of minutes, to restore a DB instance.
 
@@ -537,7 +543,7 @@ Click the **+ Create User Group** at the top of the user group list and a pop-up
 ![user group list 001](https://static.toastoven.net/prod_rds_mssql/user_group_list_001.png)
 ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_create_001.png)
 
-* ❶ Add and delete notification target.
+* ❶ Add or delete notification target.
   ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
     * Click the **Add** button on the right of the user to add as a notification target.
     * Click the **x** button on the right of the user’s name to remove it from the notification target.

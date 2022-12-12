@@ -23,6 +23,11 @@ By setting up the backup retention period for more than a day, auto backup is en
 >If auto backup is enabled, make sure to use the `Full` database recovery model.
 >If the `Simple` or `Bulk logged` model is used, it will be forced to use the `Full` recovery model and perform a full backup again from the beginning.
 
+### Log Backup
+By setting up the backup retention period of DB instances for more than a day, log backup is enabled and executed every 5 to 10 minutes.
+If log backup fails and the log is lost, point-in-time restoration from the point of loss to the point of new auto backup creation is not possible. If log backup fails, the auto backup button is activated on the DB instance list screen, and you can click the button to proceed with auto backup.
+Restoration is possible from the point after the specified backup execution time or auto backup is completed by clicking the auto backup button.
+
 ### Manual Backup
 
 Regardless of auto backup enabling, a backup to a time of choice can be manually executed. To create a manual backup, it must be named to meet the following rules:
