@@ -13,6 +13,7 @@
 ### November 15, 2022
 
 #### Feature Improvements
+
 * Added a feature to proceed with auto backup when log backup fails
 * Added a feature to activate or deactivate auto backup and log backup
 * Added a feature to select the temp DB location
@@ -20,6 +21,7 @@
 ### October 11, 2022
 
 #### Bug Fixes
+
 * Limited the maximum available period for querying error logs to 3 months
 
 ### September 14, 2022
