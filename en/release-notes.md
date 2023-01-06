@@ -1,5 +1,18 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### January 10, 2023
+#### Feature Improvements
+
+* Removed the full backup to object storage feature
+* Made improvements to export full backups during differential backup to object storage
+* Made improvements to select current databases during differential backup to object storage
+* Made improvements to restore differential backups when restoring from backups in object storage
+* Made improvements to select backed up databases when exporting backups to object storage
+
+#### Bug Fixes
+
+* Fixed an issue where, when restoring backups in object storage, differential backups cannot be restored
+
 ### December 13, 2022
 #### Feature Improvements
 
