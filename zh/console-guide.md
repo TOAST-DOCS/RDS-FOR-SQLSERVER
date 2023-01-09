@@ -9,7 +9,7 @@ On the DB Instances tab, you can create, modify, or delete database (DB) instanc
 To create a DB instance, click **Create DB Instance** on top left of the list to go to page for DB instance creation.
 Enter specifications, information, network, floating IP, DB security group, and backup settings for the instance, click **Create DB Instance** and send a request for creation.
 
-![Create DB Instance 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_create_001_kr.png)
+![Create DB Instance 001](https://static.toastoven.net/prod_rds_mssql/20221115/db_instance_create_001_kr.png)
 
 * ❶ From Compute & Network, select a created VPC subnet.
 * ❷ When a DB security group is not available, click **Create DB Security Group** to immediately create and apply a security group.
@@ -22,7 +22,7 @@ With a DB instance successfully created, you're automatically moved to the list 
 Brief information of DB instances can be listed.
 One page shows up to 50 DB instances on the list.
 
-![List of DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_list_001.png)
+![List of DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20221115/db_instance_list_001.png)
 
 * ❶ Search is available by the name or UUID of a DB instance.
 * ❷ With a click on the condition, search results can be filtered by availability zone or DB instance status.
@@ -34,8 +34,9 @@ One page shows up to 50 DB instances on the list.
 * ❺ Pages can be navigated when the current list is refreshed or there are 50 DB instances or more.
 * ❻ The button is exposed when the instance is a target for hypervisor maintenance. Refer to Appendix 1 for how to perform migration.
 * ❼ The button is exposed when the parameter group has been changed but not applied yet. You can apply the parameters by clicking the button.
-* ❽ Current CPU usage and number of active sessions. The value is updated every minute.
-* ❾ The DB instance status. Different status values and colors appear depending on the status. A spinner appears if the DB instance is in operation.
+* ❽ The button is exposed when point-in-time restoration is not available due to failover or loss of log backups. By clicking the button, you can create auto backups and enable point-in-time restoration.
+* ❾ Current CPU usage and number of active sessions. The value is updated every minute.
+* ❿ The DB instance status. Different status values and colors appear depending on the status. A spinner appears if the DB instance is in operation.
 
 ### Restart a DB Instance
 
@@ -73,20 +74,21 @@ Available DB instances can be easily modified in the setting via web console.
 After setting is changed, click **Modify** at the bottom of the page to modify a DB instance.
 Once request for modifying a DB instance is successfully made, you're moved to the list of DB instances. It takes a few minutes, or up to a few dozens of minutes, to modify a DB instance.
 
-![Modify DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_modify_001_kr.png)
+![Modify DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20221115/db_instance_modify_001_kr.png)
 
 * ❶ The availability zone cannot be changed.
 * ❷ When the DB instance type is changed, database is restarted.
 * ❸ The storage type cannot be changed.
 * ❹ The storage capacity cannot be reduced once it is increased.
-* ❺ To use the high availability feature, the backup retention period must be set to 1 day or longer.
-* ❻ If the high availability auto recovery is enabled, a scheduled task for high availability recovery that runs one hour after the completion of automatic failover is created.
-* ❼ The user ID cannot be changed.
-* ❽ Without entering the password, settings cannot be changed.
-* ❾ When the port is changed, database is restarted.
-* ❿ The VPC cannot be changed.
-* ⓫ If you modify the task schedule time, the schedule time of the already created scheduled task is also changed.
-* ⓬ If you click **Modify DB Instance**, a confirmation window for DB instance modification appears.
+* ❺ When the temp DB location is changed, the database is restarted.
+* ❻ To use the high availability feature, the backup retention period must be set to 1 day or longer.
+* ❼ If the high availability auto recovery is enabled, a scheduled task for high availability recovery that runs one hour after the completion of automatic failover is created.
+* ❽ The user ID cannot be changed.
+* ❾ Without entering the password, settings cannot be changed.
+* ❿ When the port is changed, database is restarted.
+* ⓫ The VPC cannot be changed.
+* ⓬ If you modify the task schedule time, the schedule time of the already created scheduled task is also changed.
+* ⓭ If you click **Modify DB Instance**, a confirmation window for DB instance modification appears.
   ![Modify DB Instances > Confirm Model](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_modal_001_kr.png)
   * If you click **Run Immediately**, it is changed immediately.
   * If you click **Schedule Task**, a task is scheduled at the task schedule time of the DB instance.
@@ -149,13 +151,18 @@ One page shows up to 50 backups on the list.
 
 ![DB Instance Details > Backups 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_backup_001.png)
 
-* ❶ Shows backup execution time. If time is not specified, the time specified by the system is displayed.
-* ❷ Shows creation time of the most recently executed backup.
-* ❸ Search is available by the backup name.
-* ❹ Restore DB instances by using selected backups.
-* ❺ Delete selected backups: only manual backups can be deleted.
-* ❻ Create manual backup files.
-* ❼ Pagination is available when the current list is updated or if there are more than 50 backup files.
+* ❶ You can activate or deactivate backup. If backup is deactivated, auto backup is not proceeded during the backup execution time.
+* ❷ You can activate or deactivate log backup. While log backup is deactivated, the point-in-time restoration time does not increase.
+* ❸ Show the creation time for the latest executed backup.
+* ❹ Show the backup execution time. If time is not specified, the time specified by the system is displayed.
+* ❺ Show whether to activate backup.
+* ❻ Show whether to activate log backup.
+* ❼ Show whether to proceed with log backup.
+* ❽ You can search by backup name.
+* ❾ Restore a DB instance by using the selected backup.
+* ❿ Delete the selected backup. Only manual backup can be deleted.
+* ⓫ Create a manual backup file.
+* ⓬ When updating the current list or 50 or more backup files exist, you can move between pages.
 
 #### Scheduled Task
 
@@ -172,21 +179,21 @@ A list of up to 50 scheduled tasks appears on a screen.
   * You can delete scheduled tasks with status 'Scheduled', 'Registered', 'Canceled', 'Error', or 'Verification Failed'.
   * If you delete a scheduled task with 'Scheduled' or 'Registered' status, the task will not be executed.
 
-### Back Up to Object Storage
+### Differential Backup to Object Storage
 
-The DB instance can be backed up and the backup file can be exported to the object storage.
+You can perform a differential backup of DB instances, and export the differential backup files to object storage.
 
-![DB Instance Details > Back Up To Object Storage](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_obs_backup_menu.png)
+![DB Instance Details > Differential Bakcup to Object Storage](https://static.toastoven.net/prod_rds_mssql/20230110/db_instance_obs_backup_menu.png)
 
-After selecting a specific DB instance from the list, click the **Back Up to Object Storage** button, and the following pop-up shows up:
+After selecting a specific DB instance from the list, click the **Differential Backup to Object Storage** button, and the following pop-up shows up:
 
-![DB Instance Details > Back Up To Object Storage](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_backup_to_obs_modal.png)
+![DB Instance Details > Differential Backup to Object Storage](https://static.toastoven.net/prod_rds_mssql/20230110/db_instance_differential_backup_to_obs_backup.png)
 
-* ❶ Enter the Tenant ID of the object storage where the backup file will be stored. This can be checked in the API endpoint settings in the object storage service web console.
-* ❷ Enter the NHN Cloud account (e-mail) of the object storage where the backup will be stored.
-* ❸ Enter the API password of the object storage where the backup will be stored.
-* ❹ Enter the container name of the object storage where the backup will be stored.
-* ❺ Enter the file path of the backup file to be stored in the container.
+* ❶ Enter the Tenant ID of the object storage where the differential backup file will be stored. This can be checked in the API endpoint settings in the object storage service web console.
+* ❷ Enter the NHN Cloud account (e-mail) of the object storage where the differential backup will be stored.
+* ❸ Enter the API password of the object storage where the differential backup will be stored.
+* ❹ Enter the container name of the object storage where the differential backup will be stored.
+* ❺ Enter the file path of the differential backup file to be stored in the container.
   * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
   * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
 * ❻ Enter the name of the database to be backed up.
@@ -196,25 +203,26 @@ Enter information and press **OK** to proceed with backup. Once backup completes
 
 ![Check backup file uploaded to object storage](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_backup_to_obs_result.png)
 
-### Recover from Backup in Object Storage
+### Restore from Backup in Object Storage
 
 A backup file in object storage can be recovered to a DB instance.
 
-![DB Instance Details > Recover From Backup In Object Storage](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_obs_backup_menu.png)
+![DB Instance Details > Restore From Backup In Object Storage](https://static.toastoven.net/prod_rds_mssql/20230110/db_instance_obs_backup_menu.png)
 
-After selecting a specific DB instance from the list, click the **Recover From Backup In Object Storage** button, and the following pop-up shows up:
+After selecting a specific DB instance from the list, click the **Restore From Backup In Object Storage** button, and the following pop-up shows up:
 
-![DB Instance Details > Recover From Backup In Object Storage Pop-up](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_backup_from_obs_modal.png)
+![DB Instance Details > Restore From Backup In Object Storage Pop-up](https://static.toastoven.net/prod_rds_mssql/20230110/db_instance_restore_from_obs_modal.png)
 
-* ❶ Enter the Tenant ID of the object storage where the backup file will be stored. This can be checked in the API endpoint settings in the object storage service web console.
-* ❷ Enter the NHN Cloud account (e-mail) of the object storage where the backup will be stored.
-* ❸ Enter the API password of the object storage where the backup will be stored.
-* ❹ Enter the container name of the object storage where the backup will be stored.
-* ❺ Enter the file path of the backup file to be stored in the container.
+* ❶ Enter the Tenant ID of the object storage where the full backup file is stored. This can be checked in the API endpoint settings in the object storage service web console.
+* ❷ Enter the NHN Cloud account (e-mail) of the object storage where the full backup file is stored.
+* ❸ Enter the API password of the object storage where the full backup file is stored.
+* ❹ Enter the container name of the object storage where the full backup file is stored.
+* ❺ Enter the path of the full backup file stored in the container.
   * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
   * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
-* ❻ Enter the name of the database to be backed up.
-* ❼ Select whether to recover.
+* ❻ Enter the name of a database to be restored.
+* ❼ Select whether to restore differential backups.
+* ❽ Enter the path of the differential backup file stored in the container.
 
 Press **OK** after entering the information and the backup process begins.
 
@@ -251,7 +259,7 @@ An auto backup file or manual backup file can be exported to object storage.
 
 Select the backup to be sent to object storage from the list and click the **Export to Object Storage** button.
 
-![Backup List > Export Backup To Object Storage Pop-up](https://static.toastoven.net/prod_rds_mssql/20210209/output/backup_to_obs_modal.png)
+![Backup List > Export Backup To Object Storage Pop-up](https://static.toastoven.net/prod_rds_mssql/20230110/export_backup_to_obs_modal.png)
 
 * ❶ Enter the Tenant ID of the object storage where the backup file will be stored. This can be checked in the API endpoint settings in the object storage service web console.
 * ❷ Enter the NHN Cloud account (email) or the IAM member ID of the object storage to store the backup file.
@@ -260,8 +268,7 @@ Select the backup to be sent to object storage from the list and click the **Exp
 * ❺ Enter the file path of the backup file to be stored in the container.
   * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
   * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
-* ❻ Enter the name of the database to be backed up.
-* ❼ Select whether to use differential backup.
+* ❻ Select a database to which the backup is exported.
 
 ## Restoration
 
@@ -283,7 +290,7 @@ DB instance type, storage type, storage size, port, parameter group, and DB secu
 > If the parameter group at the time of backup does not exist, default group is selected.
 > Only DB security group that exists during backup is automatically selected.
 
-![Restoration 003](https://static.toastoven.net/prod_rds_mssql/20220614/restore_003.png)
+![Restoration 003](https://static.toastoven.net/prod_rds_mssql/20221115/restore_003.png)
 
 It takes a few minutes, or up to a few dozens of minutes, to restore a DB instance.
 
@@ -537,7 +544,7 @@ Click the **+ Create User Group** at the top of the user group list and a pop-up
 ![user group list 001](https://static.toastoven.net/prod_rds_mssql/user_group_list_001.png)
 ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_create_001.png)
 
-* ❶ Add and delete notification target.
+* ❶ Add or delete notification target.
   ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
   * Click the **Add** button on the right of the user to add as a notification target.
   * Click the **x** button on the right of the user’s name to remove it from the notification target.

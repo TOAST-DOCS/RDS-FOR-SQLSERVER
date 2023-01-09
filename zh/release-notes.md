@@ -1,7 +1,34 @@
 ## Database > RDS for MS-SQL > Release Notes
 
-### October 11, 2022
+### January 10, 2023
+#### Feature Improvements
 
+* Removed the full backup to object storage feature
+* Made improvements to export full backups during differential backup to object storage
+* Made improvements to select current databases during differential backup to object storage
+* Made improvements to restore differential backups when restoring from backups in object storage
+* Made improvements to select backed up databases when exporting backups to object storage
+
+#### Bug Fixes
+
+* Fixed an issue where, when restoring backups in object storage, differential backups cannot be restored
+
+### December 13, 2022
+#### Feature Improvements
+
+* Made modifications so that multiple security groups can be selected and deleted
+
+#### Bug Fixes
+
+* Fixed an issue where, when viewing error logs, an error occurs when the log is too long
+
+### November 15, 2022
+#### Feature Improvements
+* Added a feature to proceed with auto backup when log backup fails
+* Added a feature to activate or deactivate auto backup and log backup
+* Added a feature to select the temp DB location
+
+### October 11, 2022
 #### Bug Fixes
 * Limited the maximum available period for querying error logs to 3 months
 

@@ -23,6 +23,12 @@ By setting up the backup retention period for more than a day, auto backup is en
 >If auto backup is enabled, make sure to use the `Full` database recovery model.
 >If the `Simple` or `Bulk logged` model is used, it will be forced to use the `Full` recovery model and perform a full backup again from the beginning.
 
+### Log Backup
+
+By setting up the backup retention period of DB instances for more than a day, log backup is enabled and executed every 5 to 10 minutes.
+If log backup fails and the log is lost, point-in-time restoration from the point of loss to the point of new auto backup creation is not possible. If log backup fails, the auto backup button is activated on the DB instance list screen, and you can click the button to proceed with auto backup.
+Restoration is possible from the point after the specified backup execution time or auto backup is completed by clicking the auto backup button.
+
 ### Manual Backup
 
 Regardless of auto backup enabling, a backup to a time of choice can be manually executed. To create a manual backup, it must be named to meet the following rules:
@@ -49,33 +55,31 @@ It is recommended to apply the same type of backup DB instance and parameter gro
 If auto backup is enabled for a DB instance, it is available to restore data to a time point during retention period. To enable a point-in-time restoration, log backup is required. RDS for MS-SQL executes auto log backups at every 5 minutes, and stores them at a backup storage.
 If the auto backup is enabled, it detects the database created by user every 5 minutes and performs a full backup separately. Therefore, if users try to roll back to the time the DB was just created, the newly created DB won't be recovered properly. Using a reliable DB instance without separate modification, a point in time which as at least five minutes after the time of creation must be selected.
 
-> [Caution]
-> If a log backup cannot be executed due to an error during the backup, or if the log backup fails to save to the backup storage, automatic backup is performed again.
-
-## Exporting and importing backup using object storage
+## Export and Import Backup using Object Storage
 
 Users can back up to their DB instance object storage or recover a backup file from the user object storage as a DB instance.
 
 > [Cautions]
 > You can export and import backups to and from object storages in the same region.
 
-### Backing up to object storage
+### Differential Backup to Object Storage
 
-You can export a backup file of which backup is complete, or export the backup file as it makes a backup. The backup file is exported to a separate databases but they can be exported to any NHN Cloud object storage set to use the object storage REST API.
-When exporting at the same time as the backup process, both full and differential backups are supported.
+You can export backup files that have already been backed up or export backup files simultaneously with differential backup. Backup files are exported to each database, but can be exported to NHN Cloud object storage that has been set up to use Object Storage REST API.
 
-Before exporting a backup to the object storage, a container to save the backup file must be created. The web console's [Back up to object storage] feature can be used afterwards to export.
-If the backup file exceeds 1GB in side, it is uploaded in multiple parts.
+To export backups to object storage, you must create a container in which backup files will be stored. After creating the container, you can export backups by using **Backup to Object Storage** in the web console.
+If the backup file exceeds 1GB, it is uploaded in multiple parts.
 
-### Recover from backup in object storage
+### Restore from Backup in Object Storage
 
 For only compatible Microsoft SQL Server backup files, object storage can be used to recover to the DB instance of RDS for MS-SQL.
-This can be done by uploading an external backup to the object storage of NHN Cloud set up to use REST API and using the web console's [Recover from backup in object storage] function.
+After uploading external backup files to NHN Cloud object storage that has been set up to use REST API, you can restore backup files by using **Restore from Backup in Object Storage** in the web console.
 
-If the backup for recovery exceeds 5GB, it must be uploaded in multiple parts. For detailed instructions please refer to [Multi-part upload](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_53).
-Recovery is performed for each individual database, and can be performed onto an existing DB instance. If there is not enough space in the DB instance's storage, recovery may fail.
+If the backup file to restore exceeds 5GB, it must be uploaded in multiple parts. For more information, please refer to [Multi-part upload](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_53).
+Restoration is performed for each individual database, and can be performed onto an existing DB instance. If there is not enough space in the DB instance's storage, restoration may fail.
+
+You can also restore differential backups created based on full backups by selecting **Yes** for whether to restore differential backups and adding a differential backup path.
 
 > [Caution]
 > Since the `master` database is not recovered, the user login information in the recovered database is edited so that only users entered at the time of DB creation have access to it.
 
-If recovered in a high availability DB instance, when `Whether to recover` is set to `Yes,` the high availability setup begins the moment the database recovery completes. If `Whether to recover` is set to "no" and an error occurs during the recovery, the database that was being recovered will be deleted.
+If you are restoring to a high availability DB instance, high availability configuration starts as soon as the database is restored.
