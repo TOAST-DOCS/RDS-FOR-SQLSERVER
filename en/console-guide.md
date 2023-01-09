@@ -34,8 +34,9 @@ One page shows up to 50 DB instances on the list.
 * ❺ Pages can be navigated when the current list is refreshed or there are 50 DB instances or more.
 * ❻ The button is exposed when the instance is a target for hypervisor maintenance. Refer to Appendix 1 for how to perform migration.
 * ❼ The button is exposed when the parameter group has been changed but not applied yet. You can apply the parameters by clicking the button.
-* ❽ Current CPU usage and number of active sessions. The value is updated every minute.
-* ❾ The DB instance status. Different status values and colors appear depending on the status. A spinner appears if the DB instance is in operation.
+* ❽ The button is exposed when point-in-time restoration is not available due to failover or loss of log backups. By clicking the button, you can create auto backups and enable point-in-time restoration.
+* ❾ Current CPU usage and number of active sessions. The value is updated every minute.
+* ❿ The DB instance status. Different status values and colors appear depending on the status. A spinner appears if the DB instance is in operation.
 
 ### Restart a DB Instance
 
@@ -178,21 +179,21 @@ A list of up to 50 scheduled tasks appears on a screen.
     * You can delete scheduled tasks with status 'Scheduled', 'Registered', 'Canceled', 'Error', or 'Verification Failed'.
     * If you delete a scheduled task with 'Scheduled' or 'Registered' status, the task will not be executed.
 
-### Back Up to Object Storage
+### Differential Backup to Object Storage
 
-The DB instance can be backed up and the backup file can be exported to the object storage.
+You can perform a differential backup of DB instances, and export the differential backup files to object storage.
 
-![DB Instance Details > Back Up To Object Storage](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_obs_backup_menu.png)
+![DB Instance Details > Differential Bakcup to Object Storage](https://static.toastoven.net/prod_rds_mssql/20230110/db_instance_obs_backup_menu.png)
 
-After selecting a specific DB instance from the list, click the **Back Up to Object Storage** button, and the following pop-up shows up:
+After selecting a specific DB instance from the list, click the **Differential Backup to Object Storage** button, and the following pop-up shows up:
 
-![DB Instance Details > Back Up To Object Storage](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_backup_to_obs_modal.png)
+![DB Instance Details > Differential Backup to Object Storage](https://static.toastoven.net/prod_rds_mssql/20230110/db_instance_differential_backup_to_obs_backup.png)
 
-* ❶ Enter the Tenant ID of the object storage where the backup file will be stored. This can be checked in the API endpoint settings in the object storage service web console.
-* ❷ Enter the NHN Cloud account (e-mail) of the object storage where the backup will be stored.
-* ❸ Enter the API password of the object storage where the backup will be stored.
-* ❹ Enter the container name of the object storage where the backup will be stored.
-* ❺ Enter the file path of the backup file to be stored in the container.
+* ❶ Enter the Tenant ID of the object storage where the differential backup file will be stored. This can be checked in the API endpoint settings in the object storage service web console.
+* ❷ Enter the NHN Cloud account (e-mail) of the object storage where the differential backup will be stored.
+* ❸ Enter the API password of the object storage where the differential backup will be stored.
+* ❹ Enter the container name of the object storage where the differential backup will be stored.
+* ❺ Enter the file path of the differential backup file to be stored in the container.
     * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
     * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
 * ❻ Enter the name of the database to be backed up.
@@ -202,25 +203,26 @@ Enter information and press **OK** to proceed with backup. Once backup completes
 
 ![Check backup file uploaded to object storage](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_backup_to_obs_result.png)
 
-### Recover from Backup in Object Storage
+### Restore from Backup in Object Storage
 
 A backup file in object storage can be recovered to a DB instance.
 
-![DB Instance Details > Recover From Backup In Object Storage](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_obs_backup_menu.png)
+![DB Instance Details > Restore From Backup In Object Storage](https://static.toastoven.net/prod_rds_mssql/20230110/db_instance_obs_backup_menu.png)
 
-After selecting a specific DB instance from the list, click the **Recover From Backup In Object Storage** button, and the following pop-up shows up:
+After selecting a specific DB instance from the list, click the **Restore From Backup In Object Storage** button, and the following pop-up shows up:
 
-![DB Instance Details > Recover From Backup In Object Storage Pop-up](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_backup_from_obs_modal.png)
+![DB Instance Details > Restore From Backup In Object Storage Pop-up](https://static.toastoven.net/prod_rds_mssql/20230110/db_instance_restore_from_obs_modal.png)
 
-* ❶ Enter the Tenant ID of the object storage where the backup file will be stored. This can be checked in the API endpoint settings in the object storage service web console.
-* ❷ Enter the NHN Cloud account (e-mail) of the object storage where the backup will be stored.
-* ❸ Enter the API password of the object storage where the backup will be stored.
-* ❹ Enter the container name of the object storage where the backup will be stored.
-* ❺ Enter the file path of the backup file to be stored in the container.
+* ❶ Enter the Tenant ID of the object storage where the full backup file is stored. This can be checked in the API endpoint settings in the object storage service web console.
+* ❷ Enter the NHN Cloud account (e-mail) of the object storage where the full backup file is stored.
+* ❸ Enter the API password of the object storage where the full backup file is stored.
+* ❹ Enter the container name of the object storage where the full backup file is stored.
+* ❺ Enter the path of the full backup file stored in the container.
     * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
     * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
-* ❻ Enter the name of the database to be backed up.
-* ❼ Select whether to recover.
+* ❻ Enter the name of a database to be restored.
+* ❼ Select whether to restore differential backups.
+* ❽ Enter the path of the differential backup file stored in the container.
 
 Press **OK** after entering the information and the backup process begins.
 
@@ -257,7 +259,7 @@ An auto backup file or manual backup file can be exported to object storage.
 
 Select the backup to be sent to object storage from the list and click the **Export to Object Storage** button.
 
-![Backup List > Export Backup To Object Storage Pop-up](https://static.toastoven.net/prod_rds_mssql/20210209/output/backup_to_obs_modal.png)
+![Backup List > Export Backup To Object Storage Pop-up](https://static.toastoven.net/prod_rds_mssql/20230110/export_backup_to_obs_modal.png)
 
 * ❶ Enter the Tenant ID of the object storage where the backup file will be stored. This can be checked in the API endpoint settings in the object storage service web console.
 * ❷ Enter the NHN Cloud account (email) or the IAM member ID of the object storage to store the backup file.
@@ -266,8 +268,7 @@ Select the backup to be sent to object storage from the list and click the **Exp
 * ❺ Enter the file path of the backup file to be stored in the container.
     * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
     * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
-* ❻ Enter the name of the database to be backed up.
-* ❼ Select whether to use differential backup.
+* ❻ Select a database to which the backup is exported.
 
 ## Restoration
 
