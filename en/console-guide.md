@@ -9,10 +9,11 @@ On the DB Instances tab, you can create, modify, or delete database (DB) instanc
 To create a DB instance, click **Create DB Instance** on top left of the list to go to page for DB instance creation.
 Enter specifications, information, network, floating IP, DB security group, and backup settings for the instance, click **Create DB Instance** and send a request for creation.
 
-![Create DB Instance 001](https://static.toastoven.net/prod_rds_mssql/20221115/db_instance_create_001_kr.png)
+![Create DB Instance 001](https://static.toastoven.net/prod_rds_mssql/20230110/db_instance_create_001_kr.png)
 
 * ❶ From Compute & Network, select a created VPC subnet.
-* ❷ When a DB security group is not available, click **Create DB Security Group** to immediately create and apply a security group.
+* ❷ Select whether to activate MS-SQL monitoring.
+*  When a DB security group is not available, click **Create DB Security Group** to immediately create and apply a security group.
 * For more details, see [DB Instance](./db-instance) and [Database Access](./database-connection).
 
 With a DB instance successfully created, you're automatically moved to the list of DB instances. It takes a few minutes, or up to a few dozens of minutes, to create a DB instance.
@@ -74,7 +75,7 @@ Available DB instances can be easily modified in the setting via web console.
 After setting is changed, click **Modify** at the bottom of the page to modify a DB instance.
 Once request for modifying a DB instance is successfully made, you're moved to the list of DB instances. It takes a few minutes, or up to a few dozens of minutes, to modify a DB instance.
 
-![Modify DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20221115/db_instance_modify_001_kr.png)
+![Modify DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20230110/db_instance_modify_001_kr.png)
 
 * ❶ The availability zone cannot be changed.
 * ❷ When the DB instance type is changed, database is restarted.
@@ -87,8 +88,9 @@ Once request for modifying a DB instance is successfully made, you're moved to t
 * ❾ Without entering the password, settings cannot be changed.
 * ❿ When the port is changed, database is restarted.
 * ⓫ The VPC cannot be changed.
-* ⓬ If you modify the task schedule time, the schedule time of the already created scheduled task is also changed.
-* ⓭ If you click **Modify DB Instance**, a confirmation window for DB instance modification appears.
+* ⓬ When the MS-SQL monitoring option is changed, database is restarted.
+* ⓭ If you modify the task schedule time, the schedule time of the already created scheduled task is also changed.
+* ⓮ If you click **Modify DB Instance**, a confirmation window for DB instance modification appears.
 ![Modify DB Instances > Confirm Model](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_modal_001_kr.png)
     * If you click **Run Immediately**, it is changed immediately.
     * If you click **Schedule Task**, a task is scheduled at the task schedule time of the DB instance.
