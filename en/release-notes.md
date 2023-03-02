@@ -1,5 +1,10 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### February 14, 2023
+#### Feature Improvements
+
+* Added a feature to select whether to enable MS-SQL monitoring
+
 ### January 10, 2023
 #### Feature Improvements
 
