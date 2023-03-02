@@ -13,7 +13,7 @@ Enter specifications, information, network, floating IP, DB security group, and 
 
 * ❶ From Compute & Network, select a created VPC subnet.
 * ❷ Select whether to activate MS-SQL monitoring.
-*  When a DB security group is not available, click **Create DB Security Group** to immediately create and apply a security group.
+* ❸ When a DB security group is not available, click **Create DB Security Group** to immediately create and apply a security group.
 * For more details, see [DB Instance](./db-instance) and [Database Access](./database-connection).
 
 With a DB instance successfully created, you're automatically moved to the list of DB instances. It takes a few minutes, or up to a few dozens of minutes, to create a DB instance.
