@@ -7,7 +7,7 @@
 
 #### Bug Fixes
 
-* Fixed an issue where, when restoring to an object storage backup, version error events are not logged.
+* Fixed an issue where, when restoring to an object storage backup, version error events are not logged
 
 ### February 14, 2023
 #### Feature Improvements
