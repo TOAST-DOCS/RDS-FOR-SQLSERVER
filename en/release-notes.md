@@ -1,5 +1,14 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### March 14, 2023
+#### Feature Improvements
+
+* Made improvements so that, when restoring to an object storage backup, events for backup type errors are logged
+
+#### Bug Fixes
+
+* Fixed an issue where, when restoring to an object storage backup, version error events are not logged
+
 ### February 14, 2023
 #### Feature Improvements
 
