@@ -76,6 +76,16 @@ DB instance status consists of the following values, and it may change depending
 | Migrating | Hypervisor migration is in progress |
 | Error | Cannot use the DB instance due to unknown reasons |
 
+### DB Instance Monitoring Status
+
+DB instance monitoring status consists of the following values, and it may change depending on the user's action and current status.
+
+| Status    | Description |
+| ------- | -------------------------------------------------|
+| MS-SQL monitoring always enabled | MS-SQL monitoring is enabled |
+| MS-SQL monitoring disabled at specific time | MS-SQL monitoring is disabled at a specific time |
+| MS-SQL monitoring disabled | MS-SQL monitoring is disabled |
+
 ### Storage Type
 
 DB instances support two storage types: HDD or SSD.
