@@ -4,15 +4,11 @@ You can monitor performance metrics of a DB instance, as well as various events 
 
 ## Server Dashboard
 
-Server Dashboard helps to visualize performance metrics on a chart. Metrics are collected at every minute and retained for up to 5 years. Metric data are collected by the average of 5 minutes, 30 minutes, 2 hours, or 1 day. Each collecting unit provides different retention period like below:
+Server Dashboard helps to visualize performance metrics on a chart. Metrics are collected at every minute and retained for up to 1 year. Each collecting unit provides different retention period like below:
 
 | Collecting Unit | Retention Period |
-| --- | --- |
-| 1 minute | 7 days |
-| 5 minutes | 1 month |
-| 30 minutes | 6 months |
-| 2 hours | 2 years |
-| 1 day | 5 years |
+| --- |------------------|
+| 1 minute | 1 year           |
 
 A chart can be arranged in a desired layout, and you can create multiple layouts and manage them for your purpose.
 
