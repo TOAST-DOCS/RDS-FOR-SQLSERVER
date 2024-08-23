@@ -74,7 +74,7 @@ If the backup file exceeds 1GB, it is uploaded in multiple parts.
 For only compatible Microsoft SQL Server backup files, object storage can be used to recover to the DB instance of RDS for MS-SQL.
 After uploading external backup files to NHN Cloud object storage that has been set up to use REST API, you can restore backup files by using **Restore from Backup in Object Storage** in the web console.
 
-If the backup file to restore exceeds 5GB, it must be uploaded in multiple parts. For more information, please refer to [Multi-part upload](https://docs.nhncloud.com/ko/Storage/Object%20Storage/en/api-guide/#_52).
+If the backup file to restore exceeds 5GB, it must be uploaded in multiple parts. For more information, please refer to [Multi-part upload](https://docs.nhncloud.com/en/Storage/Object%20Storage/en/api-guide/#_52).
 Restoration is performed for each individual database, and can be performed onto an existing DB instance. If there is not enough space in the DB instance's storage, restoration may fail.
 
 You can also restore differential backups created based on full backups by selecting **Yes** for whether to restore differential backups and adding a differential backup path.
