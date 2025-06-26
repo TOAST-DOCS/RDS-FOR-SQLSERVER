@@ -12,7 +12,7 @@ Once the DB instance is created, an internal domain is issued, which can be acce
 
 ## Database Port
 
-A random port between 1150 and 65535 can be specified as a database port.
+A random port between 1150 and 49151 can be specified as a database port.
 
 > [Caution]
 > When a port for the kernel, service, or an application program of Windows server is specified, database may not run properly.
