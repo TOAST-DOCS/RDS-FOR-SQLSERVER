@@ -1,8 +1,12 @@
-## Database > RDS for MS-SQL > Monitoring
+<!-- pre-align:aligned sig=c0cdc6ebc487 -->
+
+<a id="database-rds-for-ms-sql-monitoring"></a>
+## Database > RDS for MS-SQL > Monitoring { #database-rds-for-ms-sql-monitoring }
 
 You can monitor performance metrics of a DB instance, as well as various events that occurred in each DB instance, backup, parameter group, or security group.
 
-## Server Dashboard
+<a id="server-dashboard"></a>
+## Server Dashboard { #server-dashboard }
 
 Server Dashboard helps to visualize performance metrics on a chart. Metrics are collected at every minute and retained for up to 1 year. Each collecting unit provides different retention period like below:
 
@@ -12,12 +16,14 @@ Server Dashboard helps to visualize performance metrics on a chart. Metrics are 
 
 A chart can be arranged in a desired layout, and you can create multiple layouts and manage them for your purpose.
 
-### Layout
+<a id="layout"></a>
+### Layout { #layout }
 
 To view a chart, you need to configure a layout first. A layout consists of multiple charts and stores the position and size of each chart.
 RDS for MS-SQL provides two default layouts, **Basic system metrics** and **Basic SQL server metrics**. Default layouts cannot be modified or deleted by users.
 
-### Chart
+<a id="chart"></a>
+### Chart { #chart }
 
 You can view various performance metrics of DB instances in chart format. The format of chart is different for each performance metric.
 In addition to the basic system metrics, the performance metrics provided by `sys.dm_os_performance_counters` of SQL Server are provided as charts.
@@ -76,7 +82,8 @@ In addition to the basic system metrics, the performance metrics provided by `sy
 | Process Working Set Memory Size | sql server (bytes)<br> sql server vss (bytes) | |
 
 
-## Notification Group
+<a id="notification-group"></a>
+## Notification Group { #notification-group }
 
 You can receive notifications on performance metrics through notification group.
 On the notification group, set the monitoring target instance and the user group to be notified.
@@ -84,18 +91,21 @@ On the monitoring settings, set the threshold and condition of performance metri
 When the configured metrics meet the condition in the monitoring settings, notification is sent to the associated user group.
 Depending on the notification type set on the notification group, the notification is sent as an SMS or email.
 
-### Monitoring Settings
+<a id="monitoring-settings"></a>
+### Monitoring Settings { #monitoring-settings }
 
 The monitoring settings consist of items, comparison method, threshold, and duration. Duration is important in the monitoring settings. Duration is used to specify as a condition the time for which the threshold specified by the monitoring target is reached and such state is maintained. For example, if the CPU usage threshold is over 90% and the duration is 5 minutes, the users in the user group is notified when the CPU usage of the server linked to the notification group is over 90% for over 5 minutes. If the CPU usage is over 90% but falls below 90% within 5 minutes, the notification is not sent.
 
-## User Group
+<a id="user-group"></a>
+## User Group { #user-group }
 
 Users who receive notifications can be managed in groups. The notification target must be registered as a project member.
 If the users in the user group are excluded from the project members, they will not be notified even if they belong to the user group.
 
 > [Caution] If there is no mobile phone information because a user did not complete real-name verification, the user will not receive SMS notifications.
 
-## Event
+<a id="event"></a>
+## Event { #event }
 
 An event refers to an important event caused by RDS for MS-SQL or by a user. An event consists of the event category, date and time of occurrence, original source, and message. Events can be viewed on the web console, and you can receive notification of event occurrences by email, SMS, or webhook through subscription. The event categories and possible events are as follows.
 
@@ -189,18 +199,21 @@ An event refers to an important event caused by RDS for MS-SQL or by a user. An 
 | DB_SECURITY_GROUP | DB_SECURITY_GROUP_DELETED | DB security group deleted |
 | NOTIFICATION_GROUP | NOTIFICATION_GROUP_EVENT_CREATED | DB instance event occurred |
 
-### Subscribing Events
+<a id="subscribing-events"></a>
+### Subscribing Events { #subscribing-events }
 
 You may subscribe events by each category, code or source. When subscribed by event category, for example, you'll be notified on every event code included in the event category. If the range of notification is too broad, subscription may be divided by event code or source.
 
 Only project members can be selected as notified users. By default, event notification is sent by email, and if mobile phone number is registered from real-name verification, additional notification is sent via SMS. In addition to email and SMS, with webhook registration, HTTP request is sent on a pre-defined form, which is like below.
 
+<a id="subscribing-events-method-url"></a>
 #### Method, URL
 ```
 POST {URL for user-registered webhook}
 Content-Type: application/json;charset=UTF-8
 ```
 
+<a id="subscribing-events-request-body"></a>
 #### Request Body
 ```json
 {

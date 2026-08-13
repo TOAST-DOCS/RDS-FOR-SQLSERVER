@@ -1,12 +1,17 @@
-## Database > RDS for MS-SQL > Scheduled Task
+<!-- pre-align:aligned sig=e9cbedd4dab8 -->
+
+<a id="database-rds-for-ms-sql-scheduled-task"></a>
+## Database > RDS for MS-SQL > Scheduled Task { #database-rds-for-ms-sql-scheduled-task }
 
 You can view, modify, or delete the created scheduled tasks.
 
-## Scheduled Task
+<a id="scheduled-task"></a>
+## Scheduled Task { #scheduled-task }
 
 A scheduled task function is provided so that a specific task can be started at a desired time. The scheduled task runs at the task schedule time, but is not guaranteed to be completed within the task schedule time.
 
-### Scheduled Task Status
+<a id="scheduled-task-status"></a>
+### Scheduled Task Status { #scheduled-task-status }
 
 The status types of scheduled tasks are as follows:
 
@@ -24,7 +29,8 @@ The status types of scheduled tasks are as follows:
 | Error         | The scheduled task failed for an unknown reason.                |
 | Validation Failed | Validation failed because the DB instance has changed since the scheduled task was created. |
 
-### Schedule Time Type
+<a id="schedule-time-type"></a>
+### Schedule Time Type { #schedule-time-type }
 
 The following are the types of schedule time that can be selected when editing a scheduled task.
 

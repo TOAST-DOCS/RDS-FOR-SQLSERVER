@@ -1,12 +1,17 @@
-## Database > RDS for MS-SQL > Parameter Group
+<!-- pre-align:aligned sig=65a053e4dc14 -->
 
-## Parameter group
+<a id="database-rds-for-ms-sql-parameter-group"></a>
+## Database > RDS for MS-SQL > Parameter Group { #database-rds-for-ms-sql-parameter-group }
+
+<a id="parameter-group"></a>
+## Parameter group { #parameter-group }
 
 RDS for MS-SQL provides the parameter group feature to apply the settings from the Microsoft SQL Server installed in the DB instance. A parameter group is a set of parameters that sets up the Microsoft SQL Server.
 When the RDS for MS-SQL service is enabled, the basic parameter group `default.parameter-group` is provided. The basic parameter group cannot be deleted or changed.
 A DB instance can use one parameter group, and the parameter group can be used by multiple DB instances at once.
 
-### Parameter group status
+<a id="parameter-group-status"></a>
+### Parameter group status { #parameter-group-status }
 
 The status of the parameter group consists of the following values and changes according to the user's actions and the current status.
 
@@ -16,12 +21,14 @@ The status of the parameter group consists of the following values and changes a
 | Applying | The parameter group is being applied to the DB instance |
 | Need to Apply | The parameter group has been changed but not applied to DB instance |
 
-### Creating or deleting a parameter group
+<a id="creating-or-deleting-a-parameter-group"></a>
+### Creating or deleting a parameter group { #creating-or-deleting-a-parameter-group }
 
 A new parameter group can be created by copying an existing parameter group. The copied parameter group only copies parameters from the original parameter group and does not have any association with it.
 The parameter group can be deleted only when no DB instance is using the parameter group; if there is a parameter group that is using it, it cannot be deleted.
 
-## Parameters
+<a id="parameters"></a>
+## Parameters { #parameters }
 
 Parameters have the following information:
 
@@ -40,7 +47,8 @@ Parameters have the following information:
 * Data type
     * The type of the parameter value.
 
-### Parameter variables, formulas, and functions
+<a id="parameter-variables-formulas-and-functions"></a>
+### Parameter variables, formulas, and functions { #parameter-variables-formulas-and-functions }
 
 Certain parameters (e.g. `max server memory (mb)`) are better expressed as formulas that use values associated with the DB instance rather than static values. To support this, predefined variables, formulas, and functions can be used for the `numeric` data type.
 
@@ -59,7 +67,8 @@ The below example is the default value of the `max server memory (mb)` parameter
 ramSizeByte * 3 / 4 / 1048576
 ```
 
-### Changing parameters
+<a id="changing-parameters"></a>
+### Changing parameters { #changing-parameters }
 
 Only a parameter group created by users can be changed, and new one can be created by copying one from the existing parameter groups.
 If parameters inside a parameter group are changed, the changes are applied simultaneously to all DB instances that are using the parameter group. If any of the DB instances using the parameter group is in the middle of processing some other tasks, the parameter won't be changed.
@@ -72,7 +81,8 @@ A `Static` parameter is applied after a restart, and if any of the `Static` para
 If the connection to the database is unavailable when parameters are changed, the database can be restarted.
 Changing parameters for a DB instance in the connection unavailable status can fail. If the task is not completed properly, it will be reported to the administrator automatically, and NHN Cloud will contact you separately.
 
-### Applying the updated parameters
+<a id="applying-the-updated-parameters"></a>
+### Applying the updated parameters { #applying-the-updated-parameters }
 
 You can update parameters for a DB instance to which the parameter group change has not been applied.
 The procedure is performed in the same way as changing parameters, but it is applied only to the DB instance for which the user clicked Apply Updated Parameters.

@@ -1,6 +1,10 @@
-## Database > RDS for MS-SQL > DB Instance
+<!-- pre-align:aligned sig=3c66b7723ff2 -->
 
-## DB Instance
+<a id="database-rds-for-ms-sql-db-instance"></a>
+## Database > RDS for MS-SQL > DB Instance { #database-rds-for-ms-sql-db-instance }
+
+<a id="db-instance"></a>
+## DB Instance { #db-instance }
 
 DB instance encompasses virtual equipment and installed Microsoft SQL Server, serving as the unit of Microsoft SQL Server provided by RDS for MS-SQL.
 Direct access to a DB instance is not allowed, but access is enabled only through the port entered when creating the DB instance.
@@ -18,14 +22,16 @@ To create a DB instance, user account and password setting is required, consider
 * Password cannot include user's account name.
 * Password must include at least three categories out of capital letters, small-case letters, numbers, and special characters.
 
-### Availability Zone
+<a id="availability-zone"></a>
+### Availability Zone { #availability-zone }
 
 RDS for MS-SQL has many availability zones under one system so as to prepare against failure in physical hardware. A failure that occurs within an availability zone does not affect other availability zones, increasing availability of the entire service. DB instances that are dispersed and created in different availability zones can communicate via network, with no charges.
 
 > [Caution]
 > You cannot change the availability zone of a DB instance that has already been created.
 
-### Version of Microsoft SQL Server
+<a id="version-of-microsoft-sql-server"></a>
+### Version of Microsoft SQL Server { #version-of-microsoft-sql-server }
 
 The following versions are supported.
 
@@ -36,7 +42,8 @@ The following versions are supported.
 > [Caution]
 > You cannot create a different version when restoring using a backup file since the backup files for each version are incompatible.
 
-### DB Instance Type
+<a id="db-instance-type"></a>
+### DB Instance Type { #db-instance-type }
 
 Each type of DB instance has different CPU core count and memory volume.
 To create a DB instance, an appropriate type must be selected depending on the database workload.
@@ -53,7 +60,8 @@ You can use the web console to easily change the type of a DB instance that has 
 > [Caution]
 > When the type of an already created DB instance is changed, the DB instance is terminated, resulting in several minutes of downtime.
 
-### DB Instance Status
+<a id="db-instance-status"></a>
+### DB Instance Status { #db-instance-status }
 
 DB instance status consists of the following values, and it may change depending on the user's action and current status.
 
@@ -76,7 +84,8 @@ DB instance status consists of the following values, and it may change depending
 | Migrating | Hypervisor migration is in progress |
 | Error | Cannot use the DB instance due to unknown reasons |
 
-### DB Instance Monitoring Status
+<a id="db-instance-monitoring-status"></a>
+### DB Instance Monitoring Status { #db-instance-monitoring-status }
 
 DB instance monitoring status consists of the following values, and it may change depending on the user's action and current status.
 
@@ -86,7 +95,8 @@ DB instance monitoring status consists of the following values, and it may chang
 | MS-SQL monitoring disabled at specific time | MS-SQL monitoring is disabled at a specific time |
 | MS-SQL monitoring disabled | MS-SQL monitoring is disabled |
 
-### Storage Type
+<a id="storage-type"></a>
+### Storage Type { #storage-type }
 
 DB instances support two storage types: HDD or SSD.
 Since each storage type provides different performance and pricing, an appropriate storage type must be selected depending on the database workload.
@@ -97,7 +107,8 @@ You can use the web console to easily change the size of a storage that has alre
 > When the size of an already created storage is changed, the DB instance is terminated, resulting in several minutes of downtime.
 > You cannot change the type of a storage that has already been created.
 
-### Task Schedule Time
+<a id="task-schedule-time"></a>
+### Task Schedule Time { #task-schedule-time }
 
 The time during which a scheduled task is scheduled. A scheduled task can be DB instance modification, or DB instance restart that is registered when a parameter group is changed.
 
@@ -105,26 +116,31 @@ The time during which a scheduled task is scheduled. A scheduled task can be DB 
 > The task may not be completed within the set time.
 > If another task is running at the set time, the scheduled task will be retried at the scheduled time the next day.
 
-## High Availability DB Instance
+<a id="high-availability-db-instance"></a>
+## High Availability DB Instance { #high-availability-db-instance }
 
 A high availability DB instance increases availability and data durability, and provides fault-tolerant database.
 RDS for MS-SQL uses the mirroring function of the Microsoft SQL Server, consisting of a primary server, a secondary server, and an event monitor server, to offer high availability. The primary and secondary servers are created in different availability zones.
 
-### Automatic Failover
+<a id="automatic-failover"></a>
+### Automatic Failover { #automatic-failover }
 
 A failover automatically takes place when the primary server becomes unavailable due to an unexpected failure. The failed primary server is halted to prevent split brain and the secondary server takes over the role of primary server. Applications do not have to be adjusted for this change, as the A record of the internal and external domains that are used for connection is switched from the primary server to the secondary server.
 When failover is complete, high availability DB instances will disappear and the rest of DB instances are separated into two groups: the failed DB instances and the DB instances promoted due to the failure. The promoted DB instances inherit all the configurations of existing DB instances except backups. The promoted DB instances do not perform automatic backup immediately after the promotion. This is to prevent any system load due to the failover.
 The DB instances with failover completed can be restarted by pressing the **Restart** button.
 
-### Manual Failover
+<a id="manual-failover"></a>
+### Manual Failover { #manual-failover }
 
 A high availability DB instance can be failed over manually through restart using failover. When restarting a DB instance using failover, manual failover is performed and the roles of the primary and secondary servers are switched. During failover, both primary and secondary servers will restart their Microsoft SQL Server process and their internal and external domain IPs will be changed. Connection to those servers may fail from several seconds to several minutes until the domain change is completed. Backup is performed automatically when failover is complete.
 
-### High Availability Auto Recovery
+<a id="high-availability-auto-recovery"></a>
+### High Availability Auto Recovery { #high-availability-auto-recovery }
 
 The high availability auto recovery feature schedules a high availability reconfiguration task that runs one hour after the completion of automatic failover. The created scheduled task can be adjusted to the desired time or deleted in the **Scheduled Task** tab.
 
-### Cautions and constraints
+<a id="cautions-and-constraints"></a>
+### Cautions and constraints { #cautions-and-constraints }
 
 * You can use the high availability DB instance only if the storage backup period is at least 1 day.
 * High availability configuration of different regions is not supported.

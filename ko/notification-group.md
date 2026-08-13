@@ -1,8 +1,12 @@
-## Database > RDS for MS-SQL > 알림 그룹
+<!-- pre-align:aligned sig=b32fa8ad672b -->
+
+<a id="database-rds-for-ms-sql-notification-group"></a>
+## Database > RDS for MS-SQL > 알림 그룹 { #database-rds-for-ms-sql-notification-group }
 
 - DB 인스턴스의 각종 성능 지표를 감시하여 알림을 받을 수 있습니다.
 
-## 감시 설정 지표
+<a id="monitoring-configuration-metrics"></a>
+## 감시 설정 지표 { #monitoring-configuration-metrics }
 | 지표 유형 | 지표 |
 | --- | --- | 
 | CPU | CPU 사용률 | 

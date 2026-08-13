@@ -1,12 +1,17 @@
-## Database > RDS for MS-SQL > 予約タスク
+<!-- pre-align:aligned sig=e9cbedd4dab8 -->
+
+<a id="database-rds-for-ms-sql-scheduled-task"></a>
+## Database > RDS for MS-SQL > 予約タスク { #database-rds-for-ms-sql-scheduled-task }
 
 作成された予約タスクを確認、修正、削除できます。
 
-## 予約タスク
+<a id="scheduled-task"></a>
+## 予約タスク { #scheduled-task }
 
 特定のタスクを任意の時間に開始できるように予約タスク機能を提供します。予約されたタスクはタスク予約時間に実行されますが、タスク予約時間内に完了することを保障しません。
 
-### 予約タスク状態
+<a id="scheduled-task-status"></a>
+### 予約タスク状態 { #scheduled-task-status }
 
 予約タスクの状態は次のとおりです。
 
@@ -24,7 +29,8 @@
 | エラー       | 不明な理由で予約タスクが失敗した状態              |
 | 検証失敗 | 予約タスクが作成された後にDBインスタンスが変更されて検証に失敗した状態 |
 
-### 予約時間タイプ
+<a id="schedule-time-type"></a>
+### 予約時間タイプ { #schedule-time-type }
 
 予約タスクの編集時に選択できる予約時間タイプです。
 

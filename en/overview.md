@@ -1,9 +1,13 @@
-## Database > RDS for MS-SQL > Overview
+<!-- pre-align:aligned sig=0c29eff500dd -->
+
+<a id="database-rds-for-ms-sql-overview"></a>
+## Database > RDS for MS-SQL > Overview { #database-rds-for-ms-sql-overview }
 
 NHN Cloud Relational Database Service for SQL Server (RDS for MS-SQL) provides Microsoft SQL Server under the cloud environment. 
 No complicated setting is required to use highly available Microsoft SQL Server.
 
-## Main Features 
+<a id="main-features"></a>
+## Main Features { #main-features }
 
 * Easy to configure Microsoft SQL Server to meet user's specifications and volume needs.  
 * Auto or manual backup of RDS for MS-SQL is available at a time of choice. 

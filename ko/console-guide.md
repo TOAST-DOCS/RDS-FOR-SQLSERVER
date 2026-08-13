@@ -1,10 +1,15 @@
-## Database > RDS for MS-SQL > 콘솔 사용 가이드
+<!-- pre-align:aligned sig=7abd4aa8d6f0 -->
 
-## DB 인스턴스
+<a id="database-rds-for-ms-sql-console-user-guide"></a>
+## Database > RDS for MS-SQL > 콘솔 사용 가이드 { #database-rds-for-ms-sql-console-user-guide }
+
+<a id="db-instances"></a>
+## DB 인스턴스 { #db-instances }
 
 DB 인스턴스 탭에서는 DB 인스턴스의 생성, 수정, 삭제 등의 작업을 하거나, 현재 생성된 DB 인스턴스의 각종 상태 정보를 조회할 수 있습니다.
 
-### DB 인스턴스 생성
+<a id="create-a-db-instance"></a>
+### DB 인스턴스 생성 { #create-a-db-instance }
 
 DB 인스턴스를 생성하려면 먼저 DB 인스턴스 리스트 화면 좌측 상단의 **DB 인스턴스 생성** 버튼을 클릭하여 DB 인스턴스 생성 화면으로 이동합니다.
 생성하고자 하는 DB 인스턴스의 사양, 정보, 네트워크, 플로팅 IP, DB 보안 그룹, 백업 설정을 입력한 후 **DB 인스턴스 생성** 버튼을 클릭하여 DB 인스턴스 생성 요청을 합니다.
@@ -18,7 +23,8 @@ DB 인스턴스를 생성하려면 먼저 DB 인스턴스 리스트 화면 좌�
 
 DB 인스턴스 생성 요청에 성공하면, 자동으로 DB 인스턴스 리스트로 이동합니다. DB 인스턴스 생성에는 몇 분에서 몇십 분이 소요됩니다.
 
-### DB 인스턴스 목록
+<a id="list-of-db-instances"></a>
+### DB 인스턴스 목록 { #list-of-db-instances }
 
 DB 인스턴스의 간략한 정보 목록을 조회할 수 있습니다.
 한 화면에 최대 50개의 DB 인스턴스 목록이 노출됩니다.
@@ -39,7 +45,8 @@ DB 인스턴스의 간략한 정보 목록을 조회할 수 있습니다.
 * ❾ 현재 CPU 사용량과 활성 세션 개수를 나타냅니다. 값은 1분마다 갱신됩니다.
 * ❿ DB 인스턴스의 상태를 나타냅니다. 상태에 따라 서로 다른 값과 색상이 나타납니다. DB 인스턴스가 작업 중이면 스피너가 나타납니다.
 
-### DB 인스턴스 재시작
+<a id="restart-a-db-instance"></a>
+### DB 인스턴스 재시작 { #restart-a-db-instance }
 
 DB 인스턴스의 Microsoft SQL Server 프로세스를 재시작할 수 있습니다. DB 인스턴스가 고가용성 구성을 사용하면, 장애 조치를 이용해 재시작할 수 있습니다.
 
@@ -48,7 +55,8 @@ DB 인스턴스의 Microsoft SQL Server 프로세스를 재시작할 수 있습�
 * ❶ DB 인스턴스를 재시작하면, Microsoft SQL Server 프로세스를 재시작하게 됩니다. 만약 Microsoft SQL Server 프로세스의 재시작에 실패할 경우 DB 인스턴스 VM이 리부팅됩니다.
 * ❷ 고가용성 기능을 사용하는 경우 장애 조치를 이용해 재시작할 수도 있습니다.
 
-### DB 인스턴스 강제 재시작
+<a id="force-restart-a-db-instance"></a>
+### DB 인스턴스 강제 재시작 { #force-restart-a-db-instance }
 
 DB 인스턴스의 상태가 비정상이라고 판단되면, 현재 진행 중인 작업과 상관없이 강제로 재시작할 수 있습니다.
 
@@ -64,7 +72,8 @@ DB 인스턴스의 상태가 비정상이라고 판단되면, 현재 진행 중�
 > 강제 재시작을 할 경우, 현재 작업 중인 모든 작업이 유실 됩니다. 동작 중인 VM이 재부팅됩니다.
 > 강제 재시작 이후 DB 인스턴스의 상태가 정상으로 돌아오지 않을 수 있습니다. 해당 상황 발생 시 고객센터로 문의해주세요.
 
-### DB 인스턴스 수정
+<a id="modify-a-db-instance"></a>
+### DB 인스턴스 수정 { #modify-a-db-instance }
 
 사용 가능 상태의 DB 인스턴스는 웹콘솔을 통해 손쉽게 주요 설정을 변경할 수 있습니다.
 
@@ -95,11 +104,13 @@ DB 인스턴스 수정 요청에 성공하면, 자동으로 DB 인스턴스 리�
     * **즉시 실행** 버튼을 클릭하면 즉시 변경됩니다.
     * **작업 예약** 버튼을 클릭하면 DB 인스턴스 작업 예약 시간으로 작업이 예약됩니다.
 
-### DB 인스턴스 상세
+<a id="db-instance-details"></a>
+### DB 인스턴스 상세 { #db-instance-details }
 
 DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출되어, 좀 더 상세한 정보를 확인할 수 있습니다.
 상세 보기 패널은 5가지 탭으로 구성되어 있으며, DB 인스턴스와 연관된 추가 정보를 확인할 수 있습니다.
 
+<a id="db-instance-details-basic-information"></a>
 #### 기본 정보
 
 선택한 DB 인스턴스의 기본정보를 확인할 수 있습니다.
@@ -119,18 +130,21 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 
 ![DB 인스턴스 상세 > 기본 정보 001 보안 규칙](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_detail_inst_001_dsg_kr.png)
 
+<a id="db-instance-details-monitoring"></a>
 #### 모니터링
 
 선택한 DB 인스턴스와 연관된 지표를 차트를 통해 확인할 수 있습니다. 자세한 사용법은 [서버 대시보드](./console-guide#_20) 를 참고합니다.
 
 ![DB 인스턴스 상세 > 모니터링 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_mon_001.png)
 
+<a id="db-instance-details-events"></a>
 #### 이벤트
 
 선택한 DB 인스턴스와 연관된 이벤트를 확인할 수 있습니다. 자세한 사용법은 [이벤트](./console-guide#_12) 를 참고합니다.
 
 ![DB 인스턴스 상세 > 이벤트 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_event_001.png)
 
+<a id="db-instance-details-logs"></a>
 #### 로그
 
 선택한 DB 인스턴스에서 발생한 Microsoft SQL Server 의 에러로그를 확인할 수 있습니다.
@@ -145,6 +159,7 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 
 * ❶ **모든 로그 보기** 버튼을 클릭하면 조회 기간 내의 모든 로그를 무한 스크롤 방식으로 확인할 수 있습니다.
 
+<a id="db-instance-details-backups"></a>
 #### 백업
 
 선택한 DB 인스턴스의 백업 관련 설정 정보 및 백업 파일에 대한 정보를 확인할 수 있습니다.
@@ -165,6 +180,7 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 * ⓫ 수동 백업 파일을 생성합니다.
 * ⓬ 현재 목록을 갱신하거나 50개 이상의 백업 파일이 있을 경우, 페이지 이동을 할 수 있습니다.
 
+<a id="db-instance-details-scheduled-task"></a>
 #### 예약 작업
 
 선택한 DB 인스턴스의 예약 작업을 확인할 수 있습니다.
@@ -180,7 +196,8 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
     * '예약됨', '등록됨', '취소됨', '오류', '검증 실패' 상태의 예약 작업을 삭제할 수 있습니다.
     * '예약됨', '등록됨' 상태의 예약 작업을 삭제하면 해당 작업은 실행되지 않습니다.
 
-### 오브젝트 스토리지에 차등 백업
+<a id="differential-backup-to-object-storage"></a>
+### 오브젝트 스토리지에 차등 백업 { #differential-backup-to-object-storage }
 
 DB 인스턴스를 차등 백업하고, 차등 백업 파일을 오브젝트 스토리지로 내보낼 수 있습니다.
 
@@ -205,7 +222,8 @@ DB 인스턴스 목록에서 특정 DB 인스턴스를 선택한 뒤, **오브�
 
 ![오브젝트 스토리지에 올려진 백업 파일 확인](https://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_backup_to_obs_result.png)
 
-### 오브젝트 스토리지에 있는 백업으로 복원
+<a id="restore-from-backup-in-object-storage"></a>
+### 오브젝트 스토리지에 있는 백업으로 복원 { #restore-from-backup-in-object-storage }
 
 오브젝트 스토리지에 있는 백업 파일을 DB 인스턴스에 복원할 수 있습니다.
 
@@ -228,11 +246,13 @@ DB 인스턴스 목록에서 특정 DB 인스턴스를 선택한 후, **오브�
 
 정보를 입력한 후, **확인** 버튼을 누르면 복원이 진행됩니다.
 
-## 백업
+<a id="backups"></a>
+## 백업 { #backups }
 
 백업 탭에서는 모든 DB 인스턴스의 수동, 자동 백업 파일에 대한 정보를 확인할 수 있습니다.
 
-### 백업 목록
+<a id="list-of-backups"></a>
+### 백업 목록 { #list-of-backups }
 
 ![백업 목록 001](https://static.toastoven.net/prod_rds_mssql/backup_list_001.png)
 
@@ -242,7 +262,8 @@ DB 인스턴스 목록에서 특정 DB 인스턴스를 선택한 후, **오브�
 * ❹ 수동 백업 파일을 생성합니다.
 * ❺ 현재 목록을 갱신하거나, 50개 이상의 백업 파일이 있을 경우, 페이지 이동을 할 수 있습니다.
 
-### 백업 생성
+<a id="create-a-backup"></a>
+### 백업 생성 { #create-a-backup }
 
 백업 탭의 **백업 생성** 버튼을 클릭하면 백업을 생성하기 위한 팝업이 노출됩니다.
 DB 인스턴스를 선택하고, 이름을 입력한 후 **생성** 버튼을 클릭하면 백업이 수행됩니다.
@@ -253,7 +274,8 @@ DB 인스턴스를 선택하고, 이름을 입력한 후 **생성** 버튼을 �
 * ❷ 백업 이름을 입력합니다.
 * 그외 자세한 사항은 [백업 및 복원](./backup-restore) 을 참고합니다.
 
-### 오브젝트 스토리지로 백업 내보내기
+<a id="export-a-backup-to-object-storage"></a>
+### 오브젝트 스토리지로 백업 내보내기 { #export-a-backup-to-object-storage }
 
 자동 백업 파일 혹은 수동 백업 파일을 오브젝트 스토리지로 내보낼 수 있습니다.
 
@@ -272,12 +294,14 @@ DB 인스턴스를 선택하고, 이름을 입력한 후 **생성** 버튼을 �
     * 특정형태(. 또는 ..)는 사용할 수 없으며 특수문자(' " < > ; /)와 공백은 입력 할 수 없습니다.
 * ❻ 백업을 내보낼 데이터베이스를 선택합니다.
 
-## 복원
+<a id="restoration"></a>
+## 복원 { #restoration }
 
 RDS for MS-SQL에서는 백업을 이용한 복원과 시점 복원을 지원합니다.
 복원에 대한 자세한 사항은 [백업 및 복원](./backup-restore) 을 참고합니다.
 
-### 백업을 이용한 복원
+<a id="restore-using-backup"></a>
+### 백업을 이용한 복원 { #restore-using-backup }
 
 백업 탭 혹은 DB 인스턴스 상세 보기 패널의 백업 탭에서 백업을 이용한 복원을 할 수 있습니다.
 복원에 사용할 백업을 목록에서 선택 한 후, **복원** 버튼을 클릭하면 복원 화면으로 이동합니다.
@@ -296,7 +320,8 @@ RDS for MS-SQL에서는 백업을 이용한 복원과 시점 복원을 지원합
 
 DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 
-### 백업 보관 기간 중 어느 한 시점으로 복원
+<a id="point-in-time-restoration"></a>
+### 백업 보관 기간 중 어느 한 시점으로 복원 { #point-in-time-restoration }
 
 DB 인스턴스의 백업 보관 주기가 1일 이상이면 백업 보관 기간 중 어느 한 시점으로 복원할 수 있습니다.
 시점 복원할 DB 인스턴스를 선택한 후, **시점 복원** 버튼을 클릭하면 복원 화면으로 이동합니다.
@@ -314,12 +339,14 @@ DB 인스턴스의 백업 보관 주기가 1일 이상이면 백업 보관 기�
 복원 화면에서 신규로 생성되는 DB 인스턴스의 타입 및 각종 설정을 한 후, 화면 하단의 **DB 인스턴스 복원** 버튼을 눌러 DB 인스턴스를 복원합니다.
 DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 
-## 이벤트
+<a id="events"></a>
+## 이벤트 { #events }
 
 이벤트 탭에서는 최근 발생한 이벤트를 확인하거나, 이벤트 구독에 관한 설정을 할 수 있습니다.
 이벤트와 구독에 대한 자세한 설명은 [모니터링](./monitoring#_2) 을 참고합니다.
 
-### 최근 이벤트 목록
+<a id="list-of-recent-events"></a>
+### 최근 이벤트 목록 { #list-of-recent-events }
 
 최근 발생한 이벤트를 확인할 수 있습니다. 한 번에 50개의 이벤트가 노출되며, 다양한 조건으로 필터링할 수 있습니다.
 
@@ -331,7 +358,8 @@ DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 * ❹ **초기화** 버튼 클릭 시, 모든 검색 조건을 기본값으로 설정합니다.
 * ❺ 현재 목록을 갱신하거나, 50개 이상의 이벤트가 있을 경우, 페이지 이동을 할 수 있습니다.
 
-### 이벤트 구독하기
+<a id="subscribe-to-events"></a>
+### 이벤트 구독하기 { #subscribe-to-events }
 
 이벤트 구독 목록 상단의 **이벤트 구독 등록** 버튼을 클릭하면 이벤트를 구독할 수 있는 팝업이 노출됩니다.
 구독할 이벤트 정보를 입력 후, 팝업 하단의 **생성** 버튼을 클릭하면 이벤트를 구독할 수 있습니다.
@@ -363,11 +391,13 @@ DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
     * 이미 추가된 이벤트 소스는 백 스페이스키를 눌르거나 **x** 버튼을 클릭하면 삭제할 수 있습니다.
 * ❷ 마우스로 이벤트 소스를 선택할 수 있습니다.
 
-## 파라미터 그룹
+<a id="parameter-groups"></a>
+## 파라미터 그룹 { #parameter-groups }
 
 파라미터 탭에서는 DB 인스턴스에 적용할 파라미터 그룹을 생성하거나, 파라미터 그룹의 파라미터를 수정할 수 있습니다.
 
-### 파라미터 그룹 생성
+<a id="create-a-parameter-group"></a>
+### 파라미터 그룹 생성 { #create-a-parameter-group }
 
 파라미터 그룹을 생성하기 위해서는 기존 파라미터 그룹으로부터 기본값을 복사해야 합니다.
 파라미터 그룹 목록에서 복사하고자 하는 대상을 먼저 선택한 이후, **파라미터 그룹 복사** 버튼을 클릭합니다.
@@ -378,7 +408,8 @@ DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 
 ![파라미터 그룹 복사 001](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_copy_001.png)
 
-### 파라미터 그룹 수정
+<a id="modify-a-parameter-group"></a>
+### 파라미터 그룹 수정 { #modify-a-parameter-group }
 
 파라미터 그룹 목록에서 수정하고자 하는 대상의 이름을 클릭하여, 파라미터 상세 화면으로 이동합니다.
 
@@ -401,7 +432,8 @@ DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 * ❹ 모든 파라미터의 값을 기본값으로 초기화합니다.
 * ❺❻ 파라미터 수정 과정에서 발생한 에러메시지가 노출됩니다.
 
-### 파라미터 그룹 비교
+<a id="compare-parameter-groups"></a>
+### 파라미터 그룹 비교 { #compare-parameter-groups }
 
 서로 다른 2개의 파라미터 그룹을 비교하여 다른 파라미터 값이 무엇이 있는지 확인할 수 있습니다.
 파라미터 목록에서 비교하고자 하는 파라미터 그룹 2개를 선택합니다.
@@ -412,12 +444,14 @@ DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 
 ![파라미터 그룹 비교 001](https://static.toastoven.net/prod_rds_mssql/parameter_group_diff_001.png)
 
-## DB 보안 그룹
+<a id="db-security-groups"></a>
+## DB 보안 그룹 { #db-security-groups }
 
 DB 보안 그룹 탭에서는 DB 보안 그룹의 생성 및 삭제가 가능합니다. 또한 DB 보안 그룹에 정책을 추가, 수정, 삭제할 수 있습니다.
 DB 보안 그룹에 대한 자세한 설명은 [데이터베이스 접속](./database-connection) 을 참고합니다.
 
-### DB 보안 그룹 생성
+<a id="create-a-db-security-group"></a>
+### DB 보안 그룹 생성 { #create-a-db-security-group }
 
 DB 보안 그룹 목록 상단의 **DB 보안 그룹 생성** 버튼을 클릭하면, DB 보안 그룹을 생성할 수 있는 팝업이 노출됩니다.
 
@@ -428,7 +462,8 @@ DB 보안 그룹 목록 상단의 **DB 보안 그룹 생성** 버튼을 클릭�
 
 팝업 하단의 **확인** 버튼을 클릭하여 DB 보안 그룹을 생성합니다.
 
-### DB 보안 그룹 수정
+<a id="modify-a-db-security-group"></a>
+### DB 보안 그룹 수정 { #modify-a-db-security-group }
 
 DB 보안 그룹 목록에서 수정하고자 하는 DB 보안 그룹을 선택 후, 상단의 **DB 보안 그룹 변경** 버튼을 클릭합니다.
 
@@ -436,7 +471,8 @@ DB 보안 그룹 목록에서 수정하고자 하는 DB 보안 그룹을 선택 
 
 DB 보안 그룹의 이름과 설명을 수정할 수 있으며, 보안 정책은 별도로 수정해야 합니다.
 
-### 보안 정책 수정
+<a id="modify-security-policies"></a>
+### 보안 정책 수정 { #modify-security-policies }
 
 DB 보안 그룹 목록에서 DB 보안 그룹을 선택하면 화면 하단에 보안 정책을 확인, 수정할 수 있는 상세 보기 패널이 노출됩니다.
 
@@ -448,7 +484,8 @@ DB 보안 그룹 목록에서 DB 보안 그룹을 선택하면 화면 하단에 
 
 상세 보기 패널에서 DB 보안 그룹 정책을 선택하면 정책을 변경, 삭제할 수 있습니다.
 
-## 서버 대시보드
+<a id="server-dashboard"></a>
+## 서버 대시보드 { #server-dashboard }
 
 서버 대시보드 탭에서는 DB 인스턴스의 각종 성능 지표를 차트 형태로 확인할 수 있습니다.
 RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의 기본 레이아웃을 제공합니다.
@@ -460,7 +497,8 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 * ❷ 레이아웃을 변경하여, 새로운 지표를 확인할 수 있습니다.
 * ❸ 차트 조회 기간을 현재 시각 기준으로 설정합니다.
 
-### 사용자 레이아웃의 활용
+<a id="how-to-use-user-layouts"></a>
+### 사용자 레이아웃의 활용 { #how-to-use-user-layouts }
 
 **레이아웃 만들기** 버튼을 클릭하여, 레이아웃을 신규로 만들수 있습니다.
 
@@ -488,12 +526,14 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 * ❷ 우측 하단 영역을 마우스로 드래그 & 드랍하여 크기를 변경할 수 있습니다.
 * ❸ 추가된 차트를 제거할 수 있습니다.
 
-## 알림 그룹
+<a id="notification-group"></a>
+## 알림 그룹 { #notification-group }
 
 알림 그룹 탭에서는 알림 그룹의 생성 및 삭제가 가능합니다. 또한 알림 그룹에 감시 대상, 사용자 그룹, 감시 설정을 추가, 수정, 삭제할 수 있습니다.
 알림 그룹에 대한 자세한 설명은 [알림 그룹](./monitoring) 을 참고합니다.
 
-### 알림 그룹 생성
+<a id="create-a-notification-group"></a>
+### 알림 그룹 생성 { #create-a-notification-group }
 
 알림 그룹 목록 상단의 **+ 그룹 만들기** 버튼을 클릭하면, 알림 그룹을 생성할 수 있는 팝업이 노출됩니다.
 
@@ -513,7 +553,8 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 
 팝업 하단의 **확인** 버튼을 클릭하여 알림 그룹을 생성합니다.
 
-### 알림 그룹 수정
+<a id="modify-a-notification-group"></a>
+### 알림 그룹 수정 { #modify-a-notification-group }
 
 알림 그룹 목록에서 수정하고자 하는 알림 그룹의 우측 **편집** 버튼을 클릭합니다.
 ![알림 그룹 목록 001](https://static.toastoven.net/prod_rds_mssql/notification_group_list_002.png)
@@ -522,7 +563,8 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 * 알림 그룹 생성과 동일하게 이름, 알림 유형, 활성화 여부, 감시대상 DB 인스턴스, 사용자 그룹을 수정할 수 있습니다.
 
 
-### 알림 그룹 감시 설정
+<a id="notification-group-monitoring-settings"></a>
+### 알림 그룹 감시 설정 { #notification-group-monitoring-settings }
 
 알림 그룹 목록에서 감시 설정하고자 하는 알림 그룹의 우측 **감시 설정** 버튼을 클릭합니다.
 
@@ -535,11 +577,13 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 * ❷ 버튼을 클릭하면, 기존의 감시 설정을 수정할 수 있습니다.
 * ❸ 버튼을 클릭하면, 감시 설정을 삭제할 수 있습니다.
 
-## 사용자 그룹
+<a id="user-group"></a>
+## 사용자 그룹 { #user-group }
 
 사용자 그룹 탭에서는 사용자 그룹의 생성 및 삭제가 가능합니다. 또한 사용자 그룹의 사용자 목록을 추가, 수정, 삭제할 수 있습니다.
 
-### 사용자 그룹 생성
+<a id="create-a-user-group"></a>
+### 사용자 그룹 생성 { #create-a-user-group }
 
 사용자 그룹 목록 상단의 **+ 사용자 그룹 생성** 버튼을 클릭하면, 사용자 그룹을 생성할 수 있는 팝업이 노출됩니다.
 
@@ -554,7 +598,8 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 
 팝업 하단의 **확인** 버튼을 클릭하여 사용자 그룹을 생성합니다.
 
-### 사용자 그룹 수정
+<a id="modify-a-user-group"></a>
+### 사용자 그룹 수정 { #modify-a-user-group }
 
 사용자 그룹 목록에서 수정하고자 하는 사용자 그룹의 우측 **편집** 버튼을 클릭합니다.
 
@@ -562,11 +607,13 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 
 * 사용자 그룹 생성과 동일하게 이름, 통보 대상을 수정할 수 있습니다.
 
-## 예약 작업
+<a id="scheduled-tasks"></a>
+## 예약 작업 { #scheduled-tasks }
 
 DB 인스턴스 수정 시, 파라미터 그룹 변경 시, 자동 고가용성 복구 사용 시 예약 작업을 등록할 수 있습니다.
 
-### 예약 작업 목록
+<a id="list-of-scheduled-tasks"></a>
+### 예약 작업 목록 { #list-of-scheduled-tasks }
 선택한 DB 인스턴스의 예약 작업을 확인할 수 있습니다.
 한 화면에 최대 50개의 예약 작업 목록이 나타납니다.
 
@@ -580,7 +627,8 @@ DB 인스턴스 수정 시, 파라미터 그룹 변경 시, 자동 고가용성 
     * '예약됨', '등록됨', '취소됨', '오류', '검증 실패' 상태의 예약 작업을 삭제할 수 있습니다.
     * '예약됨', '등록됨' 상태의 예약 작업을 삭제하면 해당 작업은 실행되지 않습니다.
 
-### 예약 작업 편집
+<a id="edit-a-scheduled-task"></a>
+### 예약 작업 편집 { #edit-a-scheduled-task }
 예약 작업 목록에서 수정하고자 하는 예약 작업의 우측 **편집** 버튼을 클릭합니다.
 ![예약 작업 목록 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_001_kr.png)
 
@@ -598,17 +646,20 @@ DB 인스턴스 수정 시, 파라미터 그룹 변경 시, 자동 고가용성 
     * 특정 시간 이후  
         ![예약 작업 수정 매일 반복 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_003_kr.png)
 
-### 예약 작업 즉시 실행
+<a id="run-a-scheduled-task-immediately"></a>
+### 예약 작업 즉시 실행 { #run-a-scheduled-task-immediately }
 예약 작업 목록에서 수행하고자 하는 예약 작업의 우측 **즉시 실행** 버튼을 클릭합니다.
 예약 작업 즉시 실행은 예약 시간을 현재 시간으로 변경합니다.
 현재 진행 중인 작업이 있다면 완료 후 시작합니다.
 
-### 예약 작업 삭제
+<a id="delete-a-scheduled-task"></a>
+### 예약 작업 삭제 { #delete-a-scheduled-task }
 예약 작업 목록에서 수행하고자 하는 예약 작업의 우측 **삭제** 버튼을 클릭합니다.
 '예약됨', '등록됨', '에러', '취소됨', '검증 오류' 상태의 예약 작업을 삭제할 수 있습니다.
 '예약됨', '등록됨' 상태에 삭제 시 예약 작업은 더이상 진행되지 않습니다.
 
-## 부록1. 하이퍼바이저 점검을 위한 DB 인스턴스 마이그레이션 가이드
+<a id="appendix-1-db-instance-migration-guide-for-hypervisor-maintenance"></a>
+## 부록1. 하이퍼바이저 점검을 위한 DB 인스턴스 마이그레이션 가이드 { #appendix-1-db-instance-migration-guide-for-hypervisor-maintenance }
 
 NHN Cloud는 주기적으로 DB 인스턴스의 하이퍼바이저 소프트웨어를 업데이트하여 보안과 안정성을 향상시키고 있습니다.
 점검 대상 하이퍼바이저에서 구동 중인 DB 인스턴스는 마이그레이션을 통해 점검이 완료된 하이퍼바이저로 이동해야 합니다.
@@ -617,7 +668,8 @@ DB 인스턴스 마이그레이션은 NHN Cloud 콘솔에서 시작할 수 있�
 아래 가이드에 따라 콘솔에 있는 마이그레이션 기능을 이용하시기 바랍니다.
 먼저 점검 대상으로 지정된 DB 인스턴스가 있는 프로젝트로 이동합니다.
 
-### 1. 점검 대상 DB 인스턴스를 확인합니다.
+<a id="check-the-db-instance-that-requires-maintenance"></a>
+### 1. 점검 대상 DB 인스턴스를 확인합니다. { #check-the-db-instance-that-requires-maintenance }
 
 이름 옆에 **마이그레이션** 버튼이 있는 DB 인스턴스가 점검 대상 인스턴스입니다.
 
@@ -627,18 +679,21 @@ DB 인스턴스 마이그레이션은 NHN Cloud 콘솔에서 시작할 수 있�
 
 ![planned migration 002](https://static.toastoven.net/prod_rds_mssql/20211109/planned_migration_002.png)
 
-### 2. 점검 대상 DB 인스턴스에 접속 중인 응용 프로그램을 종료합니다.
+<a id="stop-applications-connected-to-the-db-instance-that-requires-maintenance"></a>
+### 2. 점검 대상 DB 인스턴스에 접속 중인 응용 프로그램을 종료합니다. { #stop-applications-connected-to-the-db-instance-that-requires-maintenance }
 
 DB에 연결된 서비스에 영향을 주지 않도록 적절한 조치를 취하시길 바랍니다.
 서비스에 영향을 줄 수밖에 없을 때는 NHN Cloud 고객 센터로 연락해 주시면 적합한 조치를 안내해 드리겠습니다.
 
-### 3. 점검 대상 DB 인스턴스의 마이그레이션을 요청합니다.
+<a id="request-migration-of-the-db-instance-that-requires-maintenance"></a>
+### 3. 점검 대상 DB 인스턴스의 마이그레이션을 요청합니다. { #request-migration-of-the-db-instance-that-requires-maintenance }
 
 점검 대상 DB 인스턴스 옆의 **마이그레이션** 버튼을 클릭한 후, 확인을 묻는 창이 나타나면 **마이그레이션** 버튼을 클릭합니다.
 
 ![planned migration 003](https://static.toastoven.net/prod_rds_mssql/20211109/planned_migration_003.png)
 
-### 4. DB 인스턴스 마이그레이션이 끝날 때까지 대기합니다.
+<a id="wait-for-the-db-instance-migration-to-finish"></a>
+### 4. DB 인스턴스 마이그레이션이 끝날 때까지 대기합니다. { #wait-for-the-db-instance-migration-to-finish }
 
 DB 인스턴스 상태가 변경되지 않는다면 '새로 고침'을 해보시기 바랍니다.
 
