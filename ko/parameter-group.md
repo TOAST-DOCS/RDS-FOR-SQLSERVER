@@ -1,12 +1,17 @@
-## Database > RDS for MS-SQL > 파라미터 그룹
+<!-- pre-align:aligned sig=65a053e4dc14 -->
 
-## 파라미터 그룹
+<a id="database-rds-for-ms-sql-parameter-group"></a>
+## Database > RDS for MS-SQL > 파라미터 그룹 { #database-rds-for-ms-sql-parameter-group }
+
+<a id="parameter-group"></a>
+## 파라미터 그룹 { #parameter-group }
 
 DB 인스턴스에 설치된 Microsoft SQL Server의 설정을 적용하기 위해서 RDS for MS-SQL은 파라미터 그룹 기능을 제공합니다. 파라미터 그룹은 Microsoft SQL Server를 설정할 수 있는 파라미터의 집합입니다.
 RDS for MS-SQL은 서비스 활성화 시, 기본 파라미터 그룹인 `default.paramter-gruop`을 제공하며, 기본 파라미터 그룹은 삭제 및 변경이 불가능합니다.
 DB 인스턴스는 하나의 파라미터 그룹을 사용할 수 있으며, 여러 DB 인스턴스에서 동시에 사용 가능합니다.
 
-### 파라미터 그룹 상태
+<a id="parameter-group-status"></a>
+### 파라미터 그룹 상태 { #parameter-group-status }
 
 파라미터 그룹의 상태는 아래와 같은 값들로 구성되며, 사용자의 행위와 현재 상태에 따라 변경됩니다.
 
@@ -16,12 +21,14 @@ DB 인스턴스는 하나의 파라미터 그룹을 사용할 수 있으며, 여
 | 적용 중         | 파라미터 그룹이 DB 인스턴스에 적용 중인 상태          |
 | 적용 필요        | 파라미터 그룹이 변경되었지만 DB 인스턴스에 적용되지 않은 상태 |
 
-### 파라미터 그룹 생성 및 삭제
+<a id="creating-or-deleting-a-parameter-group"></a>
+### 파라미터 그룹 생성 및 삭제 { #creating-or-deleting-a-parameter-group }
 
 파라미터 그룹은 기존 파라미터 그룹을 복사해 새로 생성할 수 있습니다. 복사된 파라미터 그룹은 원본 파라미터 그룹의 파라미터값만 복사할 뿐, 어떠한 연관도 없습니다.
 파라미터 그룹 삭제는 해당 파라미터 그룹을 사용 중인 DB 인스턴스가 없을 때만 가능하며, 사용 중인 DB 인스턴스가 존재하면 삭제할 수 없습니다.
 
-## 파라미터
+<a id="parameters"></a>
+## 파라미터 { #parameters }
 
 파라미터는 아래와 같은 정보를 담고 있습니다.
 
@@ -40,7 +47,8 @@ DB 인스턴스는 하나의 파라미터 그룹을 사용할 수 있으며, 여
 * 데이터 형식
     * 파라미터값의 형식을 나타냅니다.
 
-### 파라미터 변수, 수식 및 함수
+<a id="parameter-variables-formulas-and-functions"></a>
+### 파라미터 변수, 수식 및 함수 { #parameter-variables-formulas-and-functions }
 
 특정 파라미터(예를 들어 `max server memory (mb)`)들은 고정된 값을 사용하기보다는 DB 인스턴스와 연관된 값들을 이용한 수식으로 표현하는 것이 더 좋을 수 있습니다. 이를 지원하기 위해 `numeric` 데이터 형식에 대해서는 미리 정의된 변수, 수식 및 함수를 사용할 수 있습니다.
 
@@ -59,7 +67,8 @@ DB 인스턴스는 하나의 파라미터 그룹을 사용할 수 있으며, 여
 ramSizeByte * 3 / 4 / 1048576
 ```
 
-### 파라미터 변경
+<a id="changing-parameters"></a>
+### 파라미터 변경 { #changing-parameters }
 
 사용자가 생성한 파라미터 그룹만 파라미터 변경이 가능하며, 파라미터 그룹은 기존 파라미터 그룹을 복사해 새로 생성할 수 있습니다.
 파라미터 그룹 안의 파라미터 변경 시, 파라미터 그룹을 사용하는 모든 DB 인스턴스에 동시에 적용됩니다. 만약 파라미터 변경 시, 해당 파라미터 그룹을 사용하는 DB 인스턴스 중 어느 하나라도 다른 작업을 진행 중이면 파라미터 변경은 불가능합니다.
@@ -72,7 +81,8 @@ DB 인스턴스에 적용 실패한다면 추후에 변경된 파라미터를 �
 파라미터 변경 시 데이터베이스에 접속 불가 상태인 경우 데이터베이스가 재시작될 수 있습니다.
 접속 불가 상태의 DB 인스턴스 파라미터 변경 시도는 실패할 수 있습니다. 정상적으로 완료되지 않으면 자동으로 관리자에게 보고되며, NHN Cloud에서 별도로 연락을 드립니다.
 
-### 변경된 파라미터 적용
+<a id="applying-the-updated-parameters"></a>
+### 변경된 파라미터 적용 { #applying-the-updated-parameters }
 
 파라미터 그룹 변경이 반영되지 않은 DB 인스턴스의 파라미터를 최신화할 수 있습니다.
 파라미터 변경과 동일하게 진행되지만 변경된 파라미터 적용을 누른 DB 인스턴스만 적용됩니다.

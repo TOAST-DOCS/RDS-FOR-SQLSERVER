@@ -1,8 +1,12 @@
-## Database > RDS for MS-SQL > Notification Group
+<!-- pre-align:aligned sig=b32fa8ad672b -->
+
+<a id="database-rds-for-ms-sql-notification-group"></a>
+## Database > RDS for MS-SQL > Notification Group { #database-rds-for-ms-sql-notification-group }
 
 - You can receive notifications by monitoring various performance metrics of your DB instance.
 
-## Monitoring Configuration Metrics
+<a id="monitoring-configuration-metrics"></a>
+## Monitoring Configuration Metrics { #monitoring-configuration-metrics }
 | Metric Type | Metrics |
 | --- | --- | 
 | CPU | CPU Usage | 

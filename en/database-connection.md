@@ -1,8 +1,12 @@
-## Database > RDS for MS-SQL > Database Connection
+<!-- pre-align:aligned sig=26b4077e450f -->
+
+<a id="database-rds-for-ms-sql-database-connection"></a>
+## Database > RDS for MS-SQL > Database Connection { #database-rds-for-ms-sql-database-connection }
 
 Access is not directly allowed to an operating system of a DB instance but is available only via such port entered when creating a DB instance.
 
-## Domain
+<a id="domain"></a>
+## Domain { #domain }
 
 Once the DB instance is created, an internal domain is issued, which can be accessed through the VPC subnet. Using the floating IP will additionally issue an external domain which can be accessed externally. The format of a domain is as follows: `xxxx.yyyy.kr1.mssql.rds.nhncloudservice.com`. In `xxxx`, a random 32-character string is entered. In `yyyy`, either `internal` (for internal domains) or `external` (for external domains) is entered depending on the domain type.
 
@@ -10,7 +14,8 @@ Once the DB instance is created, an internal domain is issued, which can be acce
 > The previously used domain `xxxx.yyyy.sqlserver.rds.cloud.toast.com` will be deleted on August 31, 2022.
 > Please change the domain you are using to `xxxx.yyyy.kr1.mssql.rds.nhncloudservice.com`.
 
-## Database Port
+<a id="database-port"></a>
+## Database Port { #database-port }
 
 A random port between 1150 and 49151 can be specified as a database port.
 
@@ -19,11 +24,13 @@ A random port between 1150 and 49151 can be specified as a database port.
 > When there is a change in the database port for a created DB instance, database shall restart.
 > The user's ISP may block a well-known port for security purposes. In such cases, the user might not be able to connect to the NHN Cloud's RDS and must use a different port number in that case.
 
-## VPC Subnet
+<a id="vpc-subnet"></a>
+## VPC Subnet { #vpc-subnet }
 
 To create a DB instance, you must select the VPC subnet of the Compute & Network service of the user. Network connection is activated between a DB instance and an instance of the Compute & Network service within the same VPC subnet. DB instance is disconnected from external networks, except for the user's VPC subnet. To allow external connection, it must be associated with a floating IP.
 
-## DB Security Group
+<a id="db-security-group"></a>
+## DB Security Group { #db-security-group }
 
 A database security group is used to protect DB instances from other traffic. A 'Positive Security Model' is used, which allows specific traffic while blocking the other traffic. When the service is first started, a default security group is created, which blocks all incoming traffic. Therefore, even if you associate a floating IP, you cannot access immediately, and you can access only by setting the required policies. A database security group is applied equally to both external access using a floating IP and internal access using a private IP. Multiple security groups can be set for a DB instance. By creating additional security groups along with multiple policies and setting them to an instance, policies of all configured security groups are applied to the instance.
 

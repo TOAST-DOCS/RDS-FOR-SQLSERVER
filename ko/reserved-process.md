@@ -1,12 +1,17 @@
-## Database > RDS for MS-SQL > 예약 작업
+<!-- pre-align:aligned sig=e9cbedd4dab8 -->
+
+<a id="database-rds-for-ms-sql-scheduled-task"></a>
+## Database > RDS for MS-SQL > 예약 작업 { #database-rds-for-ms-sql-scheduled-task }
 
 생성된 예약 작업을 확인, 수정, 삭제할 수 있습니다.
 
-## 예약 작업
+<a id="scheduled-task"></a>
+## 예약 작업 { #scheduled-task }
 
 특정 작업을 원하는 시간에 시작할 수 있도록 예약 작업 기능을 제공합니다. 예약된 작업은 작업 예약 시간에 실행되지만, 작업 예약 시간 안에 완료되는 것을 보장하지는 않습니다.
 
-### 예약 작업 상태
+<a id="scheduled-task-status"></a>
+### 예약 작업 상태 { #scheduled-task-status }
 
 예약 작업의 상태 종류는 다음과 같습니다.
 
@@ -24,7 +29,8 @@
 | 오류         | 알 수 없는 이유로 예약 작업이 실패한 상태                |
 | 검증 실패 | 예약 작업이 생성된 이후 DB 인스턴스가 변경되어 검증에 실패한 상태 |
 
-### 예약 시간 타입
+<a id="schedule-time-type"></a>
+### 예약 시간 타입 { #schedule-time-type }
 
 예약 작업 편집 시 선택할 수 있는 예약 시간 타입입니다.
 

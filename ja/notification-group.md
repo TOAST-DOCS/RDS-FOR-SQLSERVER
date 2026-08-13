@@ -1,8 +1,12 @@
-## Database > RDS for MS-SQL > 通知グループ
+<!-- pre-align:aligned sig=b32fa8ad672b -->
+
+<a id="database-rds-for-ms-sql-notification-group"></a>
+## Database > RDS for MS-SQL > 通知グループ { #database-rds-for-ms-sql-notification-group }
 
 - DBインスタンスの各種性能指標を監視して通知を受け取ることができます。
 
-## 監視設定指標
+<a id="monitoring-configuration-metrics"></a>
+## 監視設定指標 { #monitoring-configuration-metrics }
 | 指標タイプ | 指標 |
 | --- | --- | 
 | CPU | CPU使用率 | 

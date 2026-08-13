@@ -1,9 +1,13 @@
-## Database > RDS for MS-SQL > 개요
+<!-- pre-align:aligned sig=0c29eff500dd -->
+
+<a id="database-rds-for-ms-sql-overview"></a>
+## Database > RDS for MS-SQL > 개요 { #database-rds-for-ms-sql-overview }
 
 NHN Cloud Relational Database Service for SQL Server (RDS for MS-SQL)는 Microsoft SQL Server 를 클라우드 환경에서 제공하는 서비스입니다.
 복잡한 설정 없이 고가용성의 Microsoft SQL Server 를 사용할 수 있습니다.
 
-## 특징 및 기능
+<a id="main-features"></a>
+## 특징 및 기능 { #main-features }
 
 * 손쉽게 원하는 사양, 원하는 볼륨의 크기로 Microsoft SQL Server 를 사용할 수 있습니다.
 * RDS for MS-SQL은 원하는 시각에 자동 혹은 수동으로 백업을 수행할 수 있습니다.
