@@ -662,25 +662,44 @@ DBインスタンス修正時、パラメータグループ変更時、自動高
 <a id="appendix-1-db-instance-migration-guide-for-hypervisor-maintenance"></a>
 ## 付録1. ハイパーバイザ点検のためのDBインスタンスマイグレーションガイド { #appendix-1-db-instance-migration-guide-for-hypervisor-maintenance }
 
-<!-- TODO: translate body -->
+NHN Cloud は、定期的にDBインスタンスのハイパーバイザーソフトウェアを更新し、セキュリティと安定性を向上させています。
+点検対象のハイパーバイザーで稼働中のDBインスタンスは、マイグレーションを通じて点検が完了したハイパーバイザーへ移動する必要があります。
+
+DBインスタンスのマイグレーションは、NHN Cloud コンソールから開始できます。
+以下のガイドに従って、コンソールのマイグレーション機能をご利用ください。
+まず、点検対象として指定されたDBインスタンスが存在するプロジェクトに移動します。
 
 <a id="check-the-db-instance-that-requires-maintenance"></a>
 ### 1. 点検対象のDBインスタンスを確認します。 { #check-the-db-instance-that-requires-maintenance }
 
-<!-- TODO: translate body -->
+名前の横に**[マイグレーション]**ボタンがあるDBインスタンスが、点検対象のインスタンスです。
+
+![planned migration 001](https://static.toastoven.net/prod_rds_mssql/20211109/planned_migration_001.png)
+
+**[マイグレーション]**ボタンの上にマウスカーソルを移動すると、詳細な点検スケジュールを確認できます。
+
+![planned migration 002](https://static.toastoven.net/prod_rds_mssql/20211109/planned_migration_002.png)
 
 <a id="stop-applications-connected-to-the-db-instance-that-requires-maintenance"></a>
 ### 2. 点検対象のDBインスタンスに接続中のアプリケーションを終了します。 { #stop-applications-connected-to-the-db-instance-that-requires-maintenance }
 
-<!-- TODO: translate body -->
+DBに接続されているサービスに影響を与えないよう、適切な対応を取ることをお勧めします。
+サービスへの影響が避けられない場合は、NHN Cloud カスタマーセンターまでお問い合わせください。適切な対応をご案内します。
 
 <a id="request-migration-of-the-db-instance-that-requires-maintenance"></a>
 ### 3. 点検対象のDBインスタンスのマイグレーションをリクエストします。 { #request-migration-of-the-db-instance-that-requires-maintenance }
 
-<!-- TODO: translate body -->
+点検対象のDBインスタンスの横にある**[マイグレーション]**ボタンをクリックした後、確認を求めるウィンドウが表示されたら**[マイグレーション]**ボタンをクリックします。
+
+![planned migration 003](https://static.toastoven.net/prod_rds_mssql/20211109/planned_migration_003.png)
 
 <a id="wait-for-the-db-instance-migration-to-finish"></a>
 ### 4. DBインスタンスのマイグレーションが完了するまで待ちます。 { #wait-for-the-db-instance-migration-to-finish }
 
-<!-- TODO: translate body -->
+DBインスタンスのステータスが変わらない場合は、「更新」を試してみてください。
+
+![planned migration 004](https://static.toastoven.net/prod_rds_mssql/20211109/planned_migration_004.png)
+
+DBインスタンスのマイグレーション中は、操作を行うことはできません。
+DBインスタンスのマイグレーションが正常に完了しない場合は、自動的に管理者に報告され、NHN Cloudより別途ご連絡いたします。
 
