@@ -133,14 +133,14 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 <a id="db-instance-details-monitoring"></a>
 #### 모니터링
 
-선택한 DB 인스턴스와 연관된 지표를 차트를 통해 확인할 수 있습니다. 자세한 사용법은 [서버 대시보드](./console-guide#_20) 를 참고합니다.
+선택한 DB 인스턴스와 연관된 지표를 차트를 통해 확인할 수 있습니다. 자세한 사용법은 [서버 대시보드](#server-dashboard) 를 참고합니다.
 
 ![DB 인스턴스 상세 > 모니터링 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_mon_001.png)
 
 <a id="db-instance-details-events"></a>
 #### 이벤트
 
-선택한 DB 인스턴스와 연관된 이벤트를 확인할 수 있습니다. 자세한 사용법은 [이벤트](./console-guide#_12) 를 참고합니다.
+선택한 DB 인스턴스와 연관된 이벤트를 확인할 수 있습니다. 자세한 사용법은 [이벤트](#events) 를 참고합니다.
 
 ![DB 인스턴스 상세 > 이벤트 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_event_001.png)
 
@@ -343,7 +343,7 @@ DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 ## 이벤트 { #events }
 
 이벤트 탭에서는 최근 발생한 이벤트를 확인하거나, 이벤트 구독에 관한 설정을 할 수 있습니다.
-이벤트와 구독에 대한 자세한 설명은 [모니터링](./monitoring#_2) 을 참고합니다.
+이벤트와 구독에 대한 자세한 설명은 [모니터링](./monitoring#server-dashboard) 을 참고합니다.
 
 <a id="list-of-recent-events"></a>
 ### 최근 이벤트 목록 { #list-of-recent-events }
