@@ -134,14 +134,14 @@ You may check basic information of a selected DB instance.
 <a id="db-instance-details-monitoring"></a>
 #### Monitoring
 
-Find out relevant metrics of a selected DB instance on a chart. For more detail usage, see [Server Dashboard](./console-guide#_20).
+Find out relevant metrics of a selected DB instance on a chart. For more detail usage, see [Server Dashboard](#server-dashboard).
 
 ![DB Instance Details > Monitoring 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_mon_001.png)
 
 <a id="db-instance-details-events"></a>
 #### Events
 
-Check out relevant events of a selected DB instance. For more details, see [Events](./console-guide#_12).
+Check out relevant events of a selected DB instance. For more details, see [Events](#events).
 
 ![DB Instance Details > Events 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_event_001.png)
 
@@ -343,7 +343,7 @@ It takes a few minutes, or up to a few dozens of minutes to restore a DB instanc
 ## Events { #events }
 
 On the Events tab, check out recent events or set up for event subscription.
-For more details on events and subscription, see [Monitoring](./monitoring#_2).
+For more details on events and subscription, see [Monitoring](./monitoring#event).
 
 <a id="list-of-recent-events"></a>
 ### List of Recent Events { #list-of-recent-events }

@@ -133,14 +133,14 @@ DBインスタンスを選択すると、画面下に詳細表示パネルが表
 <a id="db-instance-details-monitoring"></a>
 #### モニタリング
 
-選択したDBインスタンスに関連する指標をチャートで確認できます。詳細な使用方法は[サーバーダッシュボード](./console-guide#_20)を参照してください。
+選択したDBインスタンスに関連する指標をチャートで確認できます。詳細な使用方法は[サーバーダッシュボード](#server-dashboard)を参照してください。
 
 ![DBインスタンス詳細 > モニタリング001](https://static.toastoven.net/prod_rds_mssql/db_instance_detail_mon_001.png)
 
 <a id="db-instance-details-events"></a>
 #### イベント
 
-選択したDBインスタンスに関連するイベントを確認できます。詳細な使用方法は[イベント](./console-guide#_12)を参照してください。
+選択したDBインスタンスに関連するイベントを確認できます。詳細な使用方法は[イベント](#events)を参照してください。
 
 ![DBインスタンス詳細 > イベント001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_event_001.png)
 
@@ -345,7 +345,7 @@ DBインスタンスの復元には数分から数十分かかります。
 ## イベント { #events }
 
 イベントタブでは最近発生したイベントの確認や、イベント購読に関する設定を行うことができます。
-イベントと購読の詳細については[モニタリング](./monitoring#_2)を参照してください。
+イベントと購読の詳細については[モニタリング](./monitoring#event)を参照してください。
 
 <a id="list-of-recent-events"></a>
 ### 最近のイベントリスト { #list-of-recent-events }
