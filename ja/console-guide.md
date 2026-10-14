@@ -345,7 +345,7 @@ DBインスタンスの復元には数分から数十分かかります。
 ## イベント { #events }
 
 イベントタブでは最近発生したイベントの確認や、イベント購読に関する設定を行うことができます。
-イベントと購読の詳細については[モニタリング](./monitoring#server-dashboard)を参照してください。
+イベントと購読の詳細については[モニタリング](./monitoring#event)を参照してください。
 
 <a id="list-of-recent-events"></a>
 ### 最近のイベントリスト { #list-of-recent-events }
