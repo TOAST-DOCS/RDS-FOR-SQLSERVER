@@ -343,7 +343,7 @@ DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 ## 이벤트 { #events }
 
 이벤트 탭에서는 최근 발생한 이벤트를 확인하거나, 이벤트 구독에 관한 설정을 할 수 있습니다.
-이벤트와 구독에 대한 자세한 설명은 [모니터링](./monitoring#server-dashboard) 을 참고합니다.
+이벤트와 구독에 대한 자세한 설명은 [모니터링](./monitoring#event) 을 참고합니다.
 
 <a id="list-of-recent-events"></a>
 ### 최근 이벤트 목록 { #list-of-recent-events }
