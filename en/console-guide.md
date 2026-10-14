@@ -343,7 +343,7 @@ It takes a few minutes, or up to a few dozens of minutes to restore a DB instanc
 ## Events { #events }
 
 On the Events tab, check out recent events or set up for event subscription.
-For more details on events and subscription, see [Monitoring](./monitoring#layout).
+For more details on events and subscription, see [Monitoring](./monitoring#event).
 
 <a id="list-of-recent-events"></a>
 ### List of Recent Events { #list-of-recent-events }
